@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ShoppingCartRequest>
+  <OAuthToken></OAuthToken>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>74996</Subtotal>
+    <ShoppingCartItem>
+      <Description>XBox 360</Description>
+      <Quantity>1</Quantity>
+      <Value>29999</Value>
+      <ImageURL>http://projectabc.com/images/xbox.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Cell Phone</Description>
+      <Quantity>1</Quantity>
+      <Value>4999</Value>
+      <ImageURL>http://projectabc.com/images/Cell Phone.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>27 Monitor</Description>
+      <Quantity>1</Quantity>
+      <Value>24999</Value>
+      <ImageURL>http://projectabc.com/images/monitor.jpg</ImageURL>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Garmin GPS</Description>
+      <Quantity>1</Quantity>
+      <Value>14999</Value>
+      <ImageURL>http://projectabc.com/images/garmin.jpg</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+  <OriginUrl>http://projectabc.com</OriginUrl>
+</ShoppingCartRequest>

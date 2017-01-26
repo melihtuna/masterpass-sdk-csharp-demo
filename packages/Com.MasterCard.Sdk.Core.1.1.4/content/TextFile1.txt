@@ -1,0 +1,31 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Com.MasterCard.Sdk.Core</id>
+    <version>1.1.3</version>
+    <title>Com.MasterCard.Sdk.Core</title>
+    <authors>MasterCard</authors>
+    <owners>MasterCard</owners>
+    <licenseUrl>https://opensource.org/licenses/BSD-2-Clause</licenseUrl>
+    <projectUrl>https://developer.mastercard.com</projectUrl>
+    <iconUrl>http://www.mastercardbrandcenter.com/images/shared/logos/logo_MasterCard.gif</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MasterCard OpenAPI Core SDK.</description>
+    <summary>Features:
+      * Generated Mastercard OpenAPI specific OAuth signature.
+      * Supports logging, api tracking and exception handling.
+      * Supports token services like request and access token api.
+      * Generated client SDK have dependency on this core SDK.
+      * Supports xml and json request and response converters.
+      * Provide easy way to connect different environments like sandbox, production, stage.</summary>
+    <releaseNotes>Fixes related to PCI DSS.</releaseNotes>
+    <copyright>Copyright © MasterCard</copyright>
+    <language>en-US</language>
+    <tags>Mastercard Masterpass</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="7.0.1" />
+      <dependency id="RestSharp" version="105.2.3" />
+      <dependency id="slf4net" version="0.1.32.1" />
+    </dependencies>
+  </metadata>
+</package>

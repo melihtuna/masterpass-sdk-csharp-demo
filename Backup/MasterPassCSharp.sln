@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletWebContent", "MasterPassCSharp\WalletWebContent.csproj", "{8400EE96-436F-4B1A-A8CD-893F553A2784}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common", "common\common.csproj", "{945E6E59-B593-40C0-A8BD-5ADE9C804212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterPassCSharp_Test", "MasterPassCSharp_Test\MasterPassCSharp_Test.csproj", "{61B84F34-785B-4192-9C43-CAF5C629305E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{437E54EA-FA46-41AC-A37C-7178DFEE98D9}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		MasterPassCSharp.vsmdi = MasterPassCSharp.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletSDK", "WalletSDK\WalletSDK.csproj", "{376477DB-34C5-421E-ACDF-21343662C012}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = MasterPassCSharp.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8400EE96-436F-4B1A-A8CD-893F553A2784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8400EE96-436F-4B1A-A8CD-893F553A2784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8400EE96-436F-4B1A-A8CD-893F553A2784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8400EE96-436F-4B1A-A8CD-893F553A2784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{945E6E59-B593-40C0-A8BD-5ADE9C804212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945E6E59-B593-40C0-A8BD-5ADE9C804212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945E6E59-B593-40C0-A8BD-5ADE9C804212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945E6E59-B593-40C0-A8BD-5ADE9C804212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B84F34-785B-4192-9C43-CAF5C629305E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B84F34-785B-4192-9C43-CAF5C629305E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B84F34-785B-4192-9C43-CAF5C629305E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B84F34-785B-4192-9C43-CAF5C629305E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{376477DB-34C5-421E-ACDF-21343662C012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376477DB-34C5-421E-ACDF-21343662C012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376477DB-34C5-421E-ACDF-21343662C012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376477DB-34C5-421E-ACDF-21343662C012}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    	MasterPass Standard Flow
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Site.css")"/>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.5.1.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/common.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/commonToolTips.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/jquery-1.3.2.min.js")"></script> <!-- Needed for tooltips only -->
+	<script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/jquery.qtip-1.0.0-rc3.min.js")"></script>
+	<script type="text/javascript" src="@ViewBag.LightboxUrl"></script>
+</head>
+<body class="standard">
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>
+                    MasterCard Standard Flow</h1>
+            </div>
+            <div id="logindisplay">
+                &nbsp;
+            </div>
+        </div>
+        <div id="main">
+            <h1>
+                Request Token Received
+            </h1>
+@if (ViewBag.ErrorMessage != null)
+{
+    <h2>Error</h2>
+    <div class="error">
+        <p>
+            The following error occurred while trying to get the Request Token from the API.
+        </p>
+<pre>
+<code>
+    @ViewBag.ErrorMessage
+</code>
+</pre>
+    </div>
+}          
+            <p>
+                Use the following Request Token to call subsequent MasterPass services.
+            </p>
+            
+			@*<fieldset>
+            <legend>Sent</legend>
+          	<table>
+          	       <tr>
+                        <th>
+                            Authorization Header 
+                        </th>
+                        <td>                      
+<code>@ViewBag.AuthHeader</code>
+                        </td>
+                    </tr> 
+	              	<tr>
+                        <th>
+                            Signature Base String 
+                        </th>
+                        <td>
+                        	<hr/>
+<code>@ViewBag.SignatureBaseString</code>
+                        </td>
+                    </tr>  
+           </table>
+           </fieldset>*@
+           
+           @*<fieldset>
+            <legend>Sent to:</legend>          		
+           		<table>                     
+                    <tr>
+                        <th>
+                            Request Token URL  
+                        </th>
+                        <td>
+                            @ViewBag.RequestUrl
+                        </td>
+                    </tr>
+                    
+                 </table>  
+            </fieldset>*@
+            
+            <fieldset>
+            <legend>Received</legend>  
+                   <table>                     
+                    <tr>
+                        <th>
+                            Request Token
+                        </th>
+                        <td>
+                            @ViewBag.RequestToken
+                        </td>
+                    </tr>
+                     <tr>
+                        <th>
+                            Authorize URL 
+                        </th>
+                        <td>
+                            @ViewBag.AuthorizeUrl
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                           Expires in 
+                        </th>
+                        <td>
+                            @ViewBag.OauthExpiresIn
+                            @if (@ViewBag.OauthExpiresIn != null)
+                            {
+                                @:Seconds
+                             }
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Oauth Secret 
+                        </th>
+                        <td>
+                            @ViewBag.OauthTokenSecret
+                        </td>
+                    </tr>
+                 </table>
+                 </fieldset>  
+               
+	            <form action="O2_ShoppingCart" method="post">
+	                <input value="Shopping Cart" type="submit"/>
+	             </form>
+
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+
+
+</body>
+</html>

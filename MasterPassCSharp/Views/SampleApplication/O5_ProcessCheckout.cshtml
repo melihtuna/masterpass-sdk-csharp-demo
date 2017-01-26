@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		MasterCard Standrad Checkout Flow
+	</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Site.css")"/>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.5.1.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/common.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/commonToolTips.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/jquery-1.3.2.min.js")"></script> <!-- Needed for tooltips only -->
+	<script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/jquery.qtip-1.0.0-rc3.min.js")"></script>
+</head>
+<body class="postCheckout">
+	<div class="page">
+		<div id="header">
+			<div id="title">
+				<h1>MasterCard Standard Checkout Flow</h1>
+			</div>
+			<div id="logindisplay">&nbsp;</div>
+		</div>
+		<div id="main">
+			<h1>Retrieved Checkout XML</h1>
+@if (ViewBag.ErrorMessage != null)
+{
+    <h2>
+        Error</h2>
+    <div class="error">
+        <p>
+            The following error occurred while trying to get the Request Token from the API.
+        </p>
+        <pre>
+<code>
+    @ViewBag.ErrorMessage
+</code>
+</pre>
+    </div>
+}			
+			<p>Once a Access Token is gained, request the user protected
+				resources (shipping and/or billing information)</p>
+			@*<fieldset>
+				<legend>Sent</legend>
+				<table>
+					<tr>
+						<th>
+							Authorization Header 
+						</th>
+						<td class="formatAuth">
+							@ViewBag.AuthHeader
+						</td>
+					</tr>
+					<tr>
+						<th>
+							Signature Base String 
+						</th>
+						<td class="formatUrl">
+							<hr/>
+							@ViewBag.SignatureBaseString
+						</td>
+					</tr>
+				</table>
+			</fieldset>*@
+
+			@*<fieldset>
+				<legend>Sent To:</legend>
+				<table>
+					<tr>
+						<th>
+							Checkout Resource URL 
+						</th>
+						<td>
+							@ViewBag.CheckoutUrl
+						</td>
+					</tr>
+				</table>
+			</fieldset>*@
+			<fieldset>
+				<legend>Received:</legend>
+				<table>
+					<tr>
+					<th>
+						Checkout XML 
+					</th>
+						<td><pre>
+<code>
+@(ViewBag.CheckoutData)
+</code>
+</pre>
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+
+			<h2>
+				Sample Form  
+			</h2>
+			<div>
+				<form method="post" action="O6_PostTransaction">
+					<p>
+						<input value="Post Transaction To MasterCard" type="submit"/>
+					</p>
+				</form>
+				<h2>Results</h2>
+				<p>Following are the results returned after retrieving Shipping
+					Address &amp; Credit Card information from the Wallet.</p>
+
+				<fieldset>
+					<legend>General Information</legend>
+					<table>
+						<tbody>
+							<tr>
+								<th><label for="TransactionId"> Transaction Id:</label>
+								</th>
+								<td>
+									@Model.TransactionId
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+				<fieldset>
+					<legend>Card Information</legend>
+					<table>
+						<tbody>
+							<tr>
+								<th><label for="Card_CardHolderName"> Cardholder Name:</label>
+								</th>
+								<td>
+									@Model.Card.CardHolderName
+								</td>
+							</tr>
+							<tr>
+								<th><label for="Card_AccountNumber"> Account Number:</label>
+								</th>
+								<td>
+									@Model.Card.AccountNumber
+								</td>
+							</tr>
+							<tr>
+								<th>Billing Address:</th>
+								<td>
+									@Model.Card.BillingAddress.Line1
+                                    <br />
+                                    @Model.Card.BillingAddress.Line2
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									@Model.Card.BillingAddress.City
+                                    @Model.Card.BillingAddress.CountrySubdivision
+                                    @Model.Card.BillingAddress.PostalCode
+                                    <br />
+                                    @Model.Card.BillingAddress.Country
+								</td>
+							</tr>
+							<tr>
+								<th><label for="Card_ExpiryDate"> Expiration Date:</label>
+								</th>
+								<td>
+                                    @if (Model.Card != null)
+                                    {
+                                      @Model.Card.ExpiryMonth @:/ @Model.Card.ExpiryYear 
+                                     }
+									
+								</td>
+							</tr>
+							<tr>
+								<th><label for="Card_BrandId">Brand Id:</label>
+								</th>
+								<td>
+									@Model.Card.BrandId
+								</td>
+							</tr>
+							<tr>
+								<th><label for="Card_BrandName">Brand Name:</label>
+								</th>
+								<td>
+									@Model.Card.BrandName
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+				<fieldset>
+					<legend>Contact Information</legend>
+					<table>
+						<tbody>
+							<tr>
+								<th>Name:</th>
+								<td>
+									@Model.Contact.FirstName&nbsp;@Model.Contact.LastName
+								</td>
+							</tr>
+							<tr>
+								<th>Gender:</th>
+								<td>
+                                    @if (!string.IsNullOrEmpty(Model.Contact.Gender))
+                                    {
+									    @Model.Contact.Gender
+                                    }
+								</td>
+							</tr>	
+							<tr>
+								<th>Date of Birth:</th>
+								<td>
+									 @if ( Model.Contact.DateOfBirth != null)
+                                    {
+                                       @Model.Contact.DateOfBirth.Day @:/ @Model.Contact.DateOfBirth.Month / @Model.Contact.DateOfBirth.Year
+                                    }
+								</td>
+							</tr>
+							<tr>
+								<th>National ID:</th>
+								<td>
+                                    @Model.Contact.NationalID
+								</td>
+							</tr>			
+							<tr>
+								<th>Country:</th>
+								<td>
+                                    @Model.Contact.Country
+								</td>
+							</tr>																									
+							<tr>
+								<th><label for="Contact_PhoneNumber"> Phone Number:</label>
+								</th>
+								<td>
+                                    @Model.Contact.PhoneNumber
+								</td>
+							</tr>
+							<tr>
+								<th><label for="Contact_EmailAddress"> Email Address:</label>
+								</th>
+								<td>
+                                    @Model.Contact.EmailAddress
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+				<fieldset>
+					<legend>Shipping Address</legend>
+					<table>
+						<tbody>
+							<tr>
+								<th><label for="ShippingAddress_RecipientName"> Recipient Name:</label>
+								</th>
+								<td>
+									@Model.ShippingAddress.RecipientName
+								</td>
+							</tr>
+							<tr>
+								<th><label for="ShippingAddress_RecipientPhoneNumber"> Recipient
+										Phone Number:</label>
+								</th>
+								<td>
+									@Model.ShippingAddress.RecipientPhoneNumber
+								</td>
+							</tr>
+							<tr>
+								<th>Address:</th>
+								<td>	
+                                    @Model.ShippingAddress.Line1
+                                    <br />
+                                    @Model.ShippingAddress.Line2
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>	
+                                    @Model.ShippingAddress.City
+                                    @Model.ShippingAddress.CountrySubdivision
+                                    @Model.ShippingAddress.PostalCode
+                                   <br />
+                                    @Model.ShippingAddress.Country
+ 								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+				<fieldset>
+					<legend>Rewards Program</legend>
+					<table>
+						<tbody>
+							<tr>
+								<th><label for="RewardProgram_RewardNumber">Reward Number:</label>
+								</th>
+								<td>
+									@Model.RewardProgram.RewardNumber
+								</td>
+							</tr>
+							<tr>
+								<th><label for="RewardProgram_RewardsId">Rewards Id:</label>
+								</th>
+								<td>
+									@Model.RewardProgram.RewardId
+								</td>
+							</tr>
+							<tr>
+								<th><label for="RewardProgram_RewardName">Reward Name:</label>
+								</th>
+								<td>
+									@Model.RewardProgram.RewardName
+								</td>
+							</tr>
+							<tr>
+								<th><label for="RewardProgram_ExpiryMonth">Expiry Month:</label>
+								</th>
+								<td>
+									@if (Model.RewardProgram.ExpiryMonth > 0)
+                                    {
+                                        @Model.RewardProgram.ExpiryMonth
+                                    }
+								</td>
+							</tr>
+							<tr>
+								<th><label for="RewardProgram_ExpiryYear">Expiry Year:</label>
+								</th>
+								<td>
+									@if (Model.RewardProgram.ExpiryYear > 0)
+                                    {
+                                        @Model.RewardProgram.ExpiryYear
+                                    }
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+				<fieldset>
+					<legend>Advanced Authentication (3DS)</legend>
+					<table>
+						<tbody>
+							<tr>
+								<th><label for="AuthenticateMethod">Authenticate Method:</label>
+								</th>
+								<td>
+									@Model.AuthenticationOptions.AuthenticateMethod
+								</td>
+							</tr>
+							<tr>
+								<th><label for="CardEnrollmentMethod">Card Enrollment Method:</label>
+								</th>
+								<td>
+									@Model.AuthenticationOptions.CardEnrollmentMethod
+								</td>
+							</tr>
+							<tr>
+								<th><label for="CAvv">CAvv:</label>
+								</th>
+								<td>
+									@Model.AuthenticationOptions.CAvv
+								</td>
+							</tr>
+							<tr>
+								<th><label for="eciFlag">EciFlag:</label>
+								</th>
+								<td>	
+									@Model.AuthenticationOptions.EciFlag
+								</td>
+							</tr>
+							<tr>
+								<th><label for="MasterCardAssignedID">Master Card Assigned Id</label>
+								</th>
+								<td>
+									@Model.AuthenticationOptions.MasterCardAssignedID
+								</td>
+							</tr>
+							<tr>
+								<th><label for="paResStatus">PaResStatus:</label>
+								</th>
+								<td>
+									@Model.AuthenticationOptions.PaResStatus
+								</td>
+							</tr>
+							<tr>
+								<th><label for="SCEnrollmentStatus">SCEnrollmentStatus:</label>
+								</th>
+								<td>
+									@Model.AuthenticationOptions.SCEnrollmentStatus
+								</td>
+							</tr>
+							<tr>
+								<th><label for="signatureVerification">SignatureVerification:</label>
+								</th>
+								<td>
+									@Model.AuthenticationOptions.SignatureVerification
+								</td>
+							</tr>
+							<tr>
+								<th><label for="xid">Xid:</label>
+								</th>
+								<td>
+									@Model.AuthenticationOptions.Xid
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</div>
+</body>
+</html>

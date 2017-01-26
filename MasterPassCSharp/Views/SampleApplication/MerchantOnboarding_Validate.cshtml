@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+@model MasterCard.WalletWebContent.Models.MasterPassData
+<html>
+<head>
+    <title>
+    	MasterPass Pairing Flow
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Site.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.5.1.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/common.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/commonToolTips.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/jquery-1.3.2.min.js")"></script> <!-- Needed for tooltips only -->
+	<script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/jquery.qtip-1.0.0-rc3.min.js")"></script>
+	<script type="text/javascript" src="@ViewBag.LightboxUrl"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+	  
+</head>
+<body class="pairing">
+    
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>
+                    MasterPass Merchant Upload Validate</h1>
+            </div>
+            <div id="logindisplay">
+                &nbsp;
+            </div>
+        </div>
+        <div id="main">
+            <h1>
+                MasterPass Merchant Upload Validate
+            </h1>
+            
+@if (ViewBag.ErrorMessage != null) {
+    	<h2>Error</h2>
+	    <div class = "error">
+		    <p>
+		        The following error occurred while trying to get the Request Token from the MasterCard API.
+		    </p>
+<pre>
+<code>
+@ViewBag.ErrorMessage
+</code>
+</pre>
+        </div>
+}
+            
+            
+			<fieldset>
+            
+           
+           <fieldset>
+            <legend>Sent to:</legend>          		
+           		<table>                     
+                    <tr>
+                        <th>
+                            Request XML  
+                        </th>
+                        <td>
+                           @Model.MerchantUploadRequest
+                        </td>
+                    </tr>
+                    
+                 </table>  
+            </fieldset>
+            
+            <fieldset>
+                <legend>Received</legend>  
+                   <table>                     
+                    <tr>
+                        <th>
+                            Response XML
+                        </th>
+                        <td>
+                            @Model.MerchantUploadValidateResponse
+                        </td>
+                    </tr>
+                     
+                 </table>
+            </fieldset>
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+</body>
+</html>

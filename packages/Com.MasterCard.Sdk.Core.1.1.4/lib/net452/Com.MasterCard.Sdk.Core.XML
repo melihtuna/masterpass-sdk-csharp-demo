@@ -1,0 +1,2181 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Com.MasterCard.Sdk.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Com.MasterCard.Sdk.Core.Api.AccessTokenApi">
+            <summary>
+            Represents a collection of functions to interact with the API endpoints.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Api.AccessTokenApi.Create(System.String,System.String,Com.MasterCard.Sdk.Core.ApiConfig)">
+            <summary>
+            Access Token Service is used to get long access token / access token.
+            <para>To get access token following fields will be require: Request Token (oauth_token) and Verifier (oauth_verifier) from the merchant callback.</para><para>For Pairing during checkout, this service will need to be called twice.</para>
+            <list type="bullet">
+            <item>To exchange for a Long Access Token which is used to retrieve precheckout data.</item>
+            <item>To exchange for an Access Token which is used to retrieve checkout data.</item>
+            </list>
+            <example>  
+            AccessTokenApi usage.
+            <code> 
+            private void AccessTokenApiExample()  
+            {
+                try
+                {
+                    AccessTokenResponse response = AccessTokenApi.Create(oauthToken, oauthVerifier);
+                    
+                    // TODO: Handle response.
+                }
+                catch (SdkErrorResponseException ex)
+                {
+                    if (ex.ErrorObject != null &amp;&amp; ex.ErrorObject is Errors)
+                    {
+                        var errors = ex.ErrorObject as Errors;
+                    
+                        // TODO: Handle errors.
+                    }
+                }
+                catch (SdkSerializationException ex)
+                {
+                    if (ex.ExceptionData != null)
+                    {
+                        // TODO: Handle ex.ExceptionData.
+                    }
+                }
+            }
+            </code> 
+            </example> 
+            </summary>
+            <param name="oauthToken">This is the oAuth token obtained from request token call.</param>
+            <param name="oauthVerifier">This verifier is returned on the callback and used in the access token request.</param>
+            <param name="config">The environment configuration.</param>
+            <returns>
+            An instance of AccessTokenResponse.
+            </returns>
+            <remarks>
+            This service is used to get long access token / access token.
+            <para>To get access token following fields will be require: Request Token (oauth_token) and Verifier (oauth_verifier) from the merchant callback.</para>
+            <list type="bullet">For Pairing during checkout, this service will need to be called twice.
+            <item>To exchange for a Long Access Token which is used to retrieve precheckout data.</item>
+            <item>To exchange for an Access Token which is used to retrieve checkout data.</item></list>
+            </remarks>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException">
+            <para>If API service returns a response which has other than 200 HTTP status code.</para>
+            <para>Use the <c>ErrorObject</c> property in case of <c>SdkErrorResponseException</c> to extract the error information.</para>
+            </exception>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <para>If request/response is unable to serialized/de-serialized.</para>
+            </exception>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException">
+            <para>If oauthToken is <c>null</c> or <c>empty</c>.</para>
+            <para>If oauthVerifier is <c>null</c> or <c>empty</c>.</para>
+            </exception>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Api.AccessTokenApi.ApiClient">
+            <summary>
+            Gets the API client instance. 
+            <para>ApiClient is initialize with the <see cref="T:Com.MasterCard.Sdk.Core.Client.DefaultApiTracker"/> and <see cref="T:Com.MasterCard.Sdk.Core.Client.MasterCardErrorHandler"/> for API tracking and error handling respectively.</para>
+            </summary>
+            <value>
+            The API client instance.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Api.RequestTokenApi">
+            <summary>
+            Represents a collection of functions to interact with the API endpoints.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Api.RequestTokenApi.Create(System.String,Com.MasterCard.Sdk.Core.ApiConfig)">
+            <summary>
+            Request Token Service. This service is used to get request token (OAuthToken).
+            <para>This must be executed when a consumer clicks Buy with MasterPass or Connect with MasterPass buttons on your site/application.</para>
+            <example>  
+            RequestTokenApi usage.
+            <code> 
+            private void RequestTokenApiExample()  
+            {
+                try
+                {
+                    RequestTokenResponse response = RequestTokenApi.Create(oauthCallback);
+                    
+                    // TODO: Handle response.
+                }
+                catch (SdkErrorResponseException ex)
+                {
+                    if (ex.ErrorObject != null &amp;&amp; ex.ErrorObject is Errors)
+                    {
+                        var errors = ex.ErrorObject as Errors;
+                    
+                        // TODO: Handle errors.
+                    }
+                }
+                catch (SdkSerializationException ex)
+                {
+                    if (ex.ExceptionData != null)
+                    {
+                        // TODO: Handle ex.ExceptionData.
+                    }
+                }
+            }
+            </code> 
+            </example> 
+            </summary>
+            <param name="oauthCallback">Endpoint that will handle the transition from the wallet site to the merchant checkout page.</param>
+            <param name="config">The environment configuration.</param>
+            <returns>
+            An instance of RequestTokenResponse.
+            </returns>
+            <remarks>
+            This service is used to get request token (OAuthToken).
+            <para>This must be executed when a consumer clicks Buy with MasterPass or Connect with MasterPass buttons on your site/application.</para>
+            </remarks>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException">
+            <para>If API service returns a response which has other than 200 HTTP status code.</para>
+            <para>Use the <c>ErrorObject</c> property in case of <c>SdkErrorResponseException</c> to extract the error information.</para>
+            </exception>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <para>If request/response is unable to serialized/de-serialized.</para>
+            </exception>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException">
+            <para>If oauthCallback is <c>null</c> or <c>empty</c>.</para>
+            </exception>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Api.RequestTokenApi.ApiClient">
+            <summary>
+            Gets the API client instance.
+            <para>ApiClient is initialize with the <see cref="T:Com.MasterCard.Sdk.Core.Client.DefaultApiTracker"/> and <see cref="T:Com.MasterCard.Sdk.Core.Client.MasterCardErrorHandler"/> for API tracking and error handling respectively.</para>
+            </summary>
+            <value>
+            The API client instance.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Client.ApiClient">
+            <summary>
+            API client is mainly responsible for making the HTTP call to the API backend.
+            <para><c>Authenticator</c>, <c>Configuration</c> and <c>RestClient</c> properties initializes with instances of <see cref="T:Com.MasterCard.Sdk.Core.MasterCardAuthenticator"/>, <see cref="T:Com.MasterCard.Sdk.Core.Client.Configuration"/> and 
+            <see cref="T:RestSharp.RestClient"/> respectively.</para>
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ApiClient.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Client.ApiClient"/> class with defaults values
+            Authenticator, Configuration and RestClient.
+            <para>Also validates whether API environment configurations registered or not. Throws the exception if not registered.</para>
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ApiClient.Execute(Com.MasterCard.Sdk.Core.Client.ServiceRequest,Com.MasterCard.Sdk.Core.ApiConfig)">
+            <summary>
+            Makes the synchronous HTTP request.
+            <para>First it serializes the request body if any, executes the request.</para>
+            <para>Also it logs the response based on specified logging configuration and handles the error if any API service returns a response with HTTP status code other than 200.</para>
+            <para>When overridden in a derived class, executes the request.</para>
+            </summary>
+            <param name="request">The service request instance.</param>
+            <param name="config">The environment configuration.</param>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException">
+            <para>If API service returns a response which has other than 200 HTTP status code.</para>
+            </exception>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <para>If request/response is unable to serialized/de-serialized.</para>
+            </exception>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ApiClient.Execute``1(Com.MasterCard.Sdk.Core.Client.ServiceRequest,Com.MasterCard.Sdk.Core.ApiConfig)">
+            <summary>
+            Makes the synchronous HTTP request. 
+            <para>First it serializes the request body if any, executes the request, handles the response and de-serializes the response content into specified type.</para>
+            <para>Also it logs the response based on specified logging configuration and handles the error if any API service returns a response with HTTP status code other than 200.</para>
+            <para>When overridden in a derived class, executes the request, handles the response, convert the response content into specified type and returns it.</para>
+            </summary>
+            <typeparam name="T">The type in which response content is de-serialized.</typeparam>
+            <param name="request">The service request instance.</param>
+            <param name="config">The environment configuration.</param>
+            <returns>
+            The specified response type instance.
+            </returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException">
+            <para>If API service returns a response which has other than 200 HTTP status code.</para>
+            </exception>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <para>If request/response is unable to serialized/de-serialized.</para>
+            </exception>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ApiClient.ExecuteAsync(Com.MasterCard.Sdk.Core.Client.ServiceRequest,Com.MasterCard.Sdk.Core.ApiConfig)">
+            <summary>
+            Makes the asynchronous HTTP request.
+            <para>First it serializes the request body if any, executes the request and handles the response.</para>
+            <para>Also it logs the response based on specified logging configuration and handles the error if any API service returns a response with HTTP status code other than 200.</para>
+            <para>When overridden in a derived class, executes the request.</para>
+            </summary>
+            <param name="request">The service request instance.</param>
+            <param name="config">The environment configuration.</param>
+            <returns>
+            An asynchronous task operation.
+            </returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException">
+            <para>If API service returns a response which has other than 200 HTTP status code.</para>
+            </exception>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <para>If request/response is unable to serialized/de-serialized.</para>
+            </exception>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ApiClient.ExecuteAsync``1(Com.MasterCard.Sdk.Core.Client.ServiceRequest,Com.MasterCard.Sdk.Core.ApiConfig)">
+            <summary>
+            Makes the asynchronous HTTP request.
+            <para>First it serializes the request body if any, executes the request, handles the response and de-serializes the response content into specified type.</para>
+            <para>Also it logs the response based on specified logging configuration and handles the error if any API service returns a response with HTTP status code other than 200.</para>
+            <para>When overridden in a derived class, executes the request, handles the response, convert the response content into specified type and returns it.</para>
+            </summary>
+            <typeparam name="T">The type in which response content is de-serialized.</typeparam>
+            <param name="request">The service request instance.</param>
+            <param name="config">The environment configuration.</param>
+            <returns>
+            An asynchronous task operation with the specified response type instance.
+            </returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException">
+            <para>If API service returns a response which has other than 200 HTTP status code.</para>
+            </exception>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <para>If request/response is unable to serialized/de-serialized.</para>
+            </exception>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ApiClient.Serialize(System.String,System.Object)">
+            <summary>
+            Serializes a request body object into data formatted string.
+            <para>If <see cref="P:Com.MasterCard.Sdk.Core.Client.ApiClient.Serializer"/> is assigned, It uses <c>Serializer</c> to serialize the request content;
+            otherwise it use the serializer based on request content type.</para>
+            <para>When overridden in a derived class, serialize the request body based on <c>Serializer</c> property or use the serializer to serialize the request body based on request content type.</para>
+            </summary>
+            <param name="requestContentType">Type of the request content.</param>
+            <param name="requestBody">The request body.</param>
+            <returns>
+            Data formatted string.
+            </returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <para>If specified request body is unable to serialized.</para>
+            </exception>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ApiClient.Deserialize``1(RestSharp.IRestResponse)">
+            <summary>
+            De-serializes the response content into specified type instance.
+            <para>If <see cref="P:Com.MasterCard.Sdk.Core.Client.ApiClient.Serializer"/> is assigned, It uses <c>Serializer</c> to deserialize the response content;
+            otherwise it use the serializer based on response content type.</para>
+            <para>When overridden in a derived class, de-serialize the request body based on <c>Serializer</c> property or use the de-serializer to de-serialize the response content based on response content type.</para>
+            </summary>
+            <typeparam name="T">The type in which response content is de-serialized.</typeparam>
+            <param name="response">The response.</param>
+            <returns>The specified type instance.</returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <para>If response content is unable to de-serialize with specified type.</para>
+            </exception>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ApiClient.ParameterToString(System.Object)">
+            <summary>
+            If parameter is DateTime, output in a formatted string (default ISO 8601), customizable with Configuration.DateTime.
+            If parameter is a list, join the list with ",".
+            Otherwise just return the string.
+            </summary>
+            <param name="value">The parameter (header, path).</param>
+            <returns>
+            Formatted string.
+            </returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.ApiClient.Serializer">
+            <summary>
+            Gets or sets the serializer.
+            <para>If value is specified, <c>ApiClient</c> uses <c>Serializer</c> to serialize/deserialize the request/response content;
+            otherwise <c>ApiClient</c> apply the serializer based on request/response content type.</para>
+            </summary>
+            <value>
+            The instance of serializer.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.ApiClient.ApiTracker">
+            <summary>
+            Gets or sets the <see cref="T:Com.MasterCard.Sdk.Core.Interfaces.IApiTracker"/>.
+            <para><c>ApiTracker</c> adds the API tacking and user-agent informations to each request.</para>
+            <para>If value is specified, its also assigned to <c>Authenticator.ApiTracker</c> property.</para>
+            </summary>
+            <value>
+            The <c>IApiTracker</c> instance.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.ApiClient.RestClient">
+            <summary>
+            Gets or sets the <see cref="T:RestSharp.RestClient"/>.
+            <para>Translate RestRequests into HTTP requests and process response.</para>
+            </summary>
+            <value>
+            An instance of the <see cref="T:RestSharp.IRestClient"/>.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.ApiClient.Authenticator">
+            <summary>
+            Gets the MasterCard API authenticator.
+            <para>Authenticator intercept the <c>RestSharp.RestClient</c> and <c>RestSharp.RestRequest</c> to add the authorization header, tracking headers and also logs the request.</para>
+            </summary>
+            <value>
+            The MasterCard API authenticator.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.ApiClient.ErrorHandler">
+            <summary>
+            Gets or sets the error handler for response error handling.
+            <para>Mostly API service classes initialize the <c>ErrorHandler</c> property with <see cref="T:Com.MasterCard.Sdk.Core.Client.MasterCardErrorHandler"/> instance.</para>
+            <para>If API service returns a response which has other than 200 HTTP status code, <c>ErrorHandler</c> handles the response and throws the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException"/> exception with proper error data.</para>
+            </summary>
+            <value>
+            An instance of the <see cref="T:Com.MasterCard.Sdk.Core.Interfaces.ISdkErrorHandler"/>.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.ApiClient.Configuration">
+            <summary>
+            Gets or sets the <see cref="P:Com.MasterCard.Sdk.Core.Client.ApiClient.Configuration"/>. Initializes with default values.
+            <para>Request timeout, request default headers, date-time format can be modify by accessing <c>Configuration</c> property.</para>
+            </summary>
+            <value>
+            An instance of the Configuration.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Client.MasterCardErrorHandler">
+            <summary>
+            Handles the response errors. Throws the exception if response's HTTP status code is other than 200 (OK).
+            </summary>
+            <seealso cref="T:Com.MasterCard.Sdk.Core.Interfaces.ISdkErrorHandler"/>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Interfaces.ISdkErrorHandler">
+            <summary>
+            Handles the response errors.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Interfaces.ISdkErrorHandler.Handle(RestSharp.IRestResponse)">
+            <summary>
+            Handles the error response.
+            </summary>
+            <param name="response">The response.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.MasterCardErrorHandler.Handle(RestSharp.IRestResponse)">
+            <summary>
+            Handles the error response. Throws the exception if response's HTTP status code is other than 200 (OK).
+            <para>Use the <c>ErrorObject</c> property in case of <c>SdkErrorResponseException</c> to extract the error information.</para>
+            </summary>
+            <param name="response">The <c>IRestResponse</c> instance.</param>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException">
+            <para>If response has HTTP status code other than 200.</para>
+            </exception>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Client.ServiceRequest">
+            <summary>
+            Container for data used to make service requests.
+            <para><see cref="T:Com.MasterCard.Sdk.Core.Client.ApiClient"/> uses the <see cref="T:Com.MasterCard.Sdk.Core.Client.ServiceRequest"/>'s data to execute the APIs.</para>
+            </summary>
+            <seealso cref="T:RestSharp.RestRequest"/>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ServiceRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Client.ServiceRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ServiceRequest.#ctor(RestSharp.Method)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Client.ServiceRequest"/> class.
+            </summary>
+            <param name="method">Method type to use for this request.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ServiceRequest.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Client.ServiceRequest"/> class.
+            </summary>
+            <param name="resource">Resource to use for this request.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ServiceRequest.#ctor(System.Uri)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Client.ServiceRequest"/> class.
+            </summary>
+            <param name="resource">Resource to use for this request.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ServiceRequest.#ctor(System.String,RestSharp.Method)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Client.ServiceRequest"/> class.
+            </summary>
+            <param name="resource">Resource to use for this request.</param>
+            <param name="method">Method type to use for this request.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ServiceRequest.#ctor(System.Uri,RestSharp.Method)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Client.ServiceRequest"/> class.
+            </summary>
+            <param name="resource">Resource to use for this request.</param>
+            <param name="method">Method type to use for this request.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ServiceRequest.SetPathParam(System.String,System.String)">
+            <summary>
+            Sets the name/value pair to the HTTP request's Headers collection - UrlSegment.
+            </summary>
+            <param name="name">Name of the segment to add.</param>
+            <param name="value">Value of the segment to add.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ServiceRequest.SetBody(System.Collections.Generic.IList{System.String},System.Object)">
+            <summary>
+            Sets body to the HTTP request. ApiClient uses first element of header content types for serialize the specified request body.
+            </summary>
+            <param name="headerContentTypes">The header content types.</param>
+            <param name="requestBody">The request body.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ServiceRequest.SetQueryParams(Com.MasterCard.Sdk.Core.Client.QueryParams)">
+            <summary>
+            Sets the query parameters.
+            </summary>
+            <param name="queryParams">The query parameters.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ServiceRequest.SetHeaders(System.Collections.Concurrent.ConcurrentDictionary{System.String,System.String})">
+            <summary>
+            Sets the header collection to the HTTP request's Headers collection.
+            </summary>
+            <param name="headers">The headers.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.ServiceRequest.SetAcceptHeader(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Sets the accept header based on specified accept header collection.
+            </summary>
+            <param name="headerAccepts">The accepts header collection.</param>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.ServiceRequest.Body">
+            <summary>
+            Gets or sets the request body.
+            </summary>
+            <value>
+            The request body.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.ServiceRequest.HeaderContentTypes">
+            <summary>
+            Gets the header content types.
+            </summary>
+            <value>
+            The header content types.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Client.DefaultApiTracker">
+            <summary>
+            Implements the <see cref="T:Com.MasterCard.Sdk.Core.Interfaces.IApiTracker"/> to get the API tracking and user-agent informations.
+            <para><c>ApiClient</c> uses the <c>DefaultApiTracker</c> in request and access token APIs for API tacking.</para>
+            <example>Returns the API tracking and user-agent informations as below:
+            <code>
+            API-Call-Tracker: base_sdk_version=1.1.0,lang_name=C#,lang_version=4.0.30319.42000
+            User-Agent: MC Open API OAuth Framework v1.0-C#
+            </code></example>
+            </summary>
+            <seealso cref="T:Com.MasterCard.Sdk.Core.Interfaces.IApiTracker"/>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Interfaces.IApiTracker">
+            <summary>
+            Provides interface to get the API tracking and user agent information.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Interfaces.IApiTracker.GetTrackingInfo">
+            <summary>
+            Gets the tracking information.
+            </summary>
+            <returns>
+            The string containing tracking keys and values.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Interfaces.IApiTracker.GetUserAgentInfo">
+            <summary>
+            Gets the user agent information.
+            </summary>
+            <returns>
+            The string containing user agent value.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.DefaultApiTracker.GetTrackingInfo">
+            <summary>
+            Gets the API tracking information.
+            <para>Also "pluginVersion" key presents in <see cref="P:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.AdditionalProperties"/> collection, its value is appended in tracking information.</para>
+            </summary>
+            <returns>
+            The string containing tracking keys and values.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.DefaultApiTracker.GetUserAgentInfo">
+            <summary>
+            Gets the user-agent information.
+            </summary>
+            <returns>
+            The string containing user-agent value.
+            </returns>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Client.Configuration">
+            <summary>
+            Represents a set of configuration settings.
+            <para><see cref="T:Com.MasterCard.Sdk.Core.Client.ApiClient"/> uses default configuration settings while executing APIs.</para>
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.Configuration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Client.Configuration"/> class.
+            </summary>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.Configuration.Timeout">
+            <summary>
+            Gets or sets the HTTP request timeout (milliseconds). 
+            <para>Default to 100000 milliseconds.</para>
+            <para><see cref="T:Com.MasterCard.Sdk.Core.Client.ApiClient"/> uses timeout value to set into request timeout.</para>
+            </summary>
+            <value>
+            The HTTP request timeout.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.Configuration.DefaultHeaders">
+            <summary>
+            Gets or sets the request default headers.
+            <para><see cref="T:Com.MasterCard.Sdk.Core.Client.ApiClient"/> uses default headers to set into each request's headers.</para>
+            </summary>
+            <value>
+            The request default headers.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.Configuration.DateTimeFormat">
+            <summary>
+            Gets or sets the date time format used when serializing in the <see cref="T:Com.MasterCard.Sdk.Core.Client.ApiClient"/>. By default, it's set to ISO 8601 - "o".
+            <para>If any API parameter is of type <see cref="T:System.DateTime"/>, this parameter is converted into specified <c>DateTimeFormat</c> string.</para>
+            <para>No validation is done to ensure that the string you're providing is valid.</para>
+            </summary>
+            <value>
+            The DateTimeFormat string
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.Configuration.Default">
+            <summary>
+            Gets or sets the default Configuration.
+            </summary>
+            <value>
+            The Configuration instance.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.ApiConfig">
+            <summary>
+            Enables to setup API environment configurations.
+            </summary>
+        </member>
+        <member name="F:Com.MasterCard.Sdk.Core.ApiConfig.CONFIG_NAME_HEADER">
+            <summary>
+            The environment configuration header name.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.ApiConfig.#ctor(System.String,System.String,System.String,System.Security.Cryptography.AsymmetricAlgorithm)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.ApiConfig"/> class.
+            </summary>
+            <param name="name">The environment name.</param>
+            <param name="hostUrl">The environment host URL.</param>
+            <param name="consumerKey">The consumer key.</param>
+            <param name="privateKey">The certificate private key.</param>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.ApiConfig.Name">
+            <summary>
+            Gets or sets the environment name.
+            </summary>
+            <value>
+            Returns environment name.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.ApiConfig.HostUrl">
+            <summary>
+            Gets or sets the environment host URL.
+            </summary>
+            <value>
+            Returns environment host url.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.ApiConfig.ConsumerKey">
+            <summary>
+            Gets or sets the consumer key.
+            </summary>
+            <value>
+            The consumer key.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.ApiConfig.PrivateKey">
+            <summary>
+            Gets or sets the X.509 certificate private key.
+            </summary>
+            <value>
+            The private key.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.ApiConfigBuilder">
+            <summary>
+            Builds the API environment configurations. Builder class to build the API environment configuration.
+            <example>  
+            Builds the API environment configuration.
+            <code> 
+            class Example
+            {
+                string HostUrl { get { return "https://sandbox.api.mastercard.com"; } }
+            
+                string ConsumerKey { get { return "cLb0tKkEJhGTITp_ald942deXM_jRd4b0476c!41asjd83748ljhkjhk6c726a327474695545332b353049303d"; } }
+            
+                AsymmetricAlgorithm PrivateKey { get { return new X509Certificate2(@"Resources\AppCertificate.p12", "CertPassword").PrivateKey; } }
+            
+                static void BuildApiConfiguration()  
+                {
+                    var config = new ApiConfigBuilder().HostUrl(HostUrl).
+                        ConsumerKey(ConsumerKey).PrivateKey(PrivateKey)
+                        .Build();
+                }
+            }
+            </code> 
+            </example> 
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.ApiConfigBuilder.Name(System.String)">
+            <summary>
+            Sets the specified environment name.
+            </summary>
+            <param name="name">The environment name.</param>
+            <returns>
+            An <see cref="T:Com.MasterCard.Sdk.Core.ApiConfigBuilder"/> instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.ApiConfigBuilder.HostUrl(System.String)">
+            <summary>
+            Sets the specified API host URL.
+            </summary>
+            <param name="hostUrl">The API host URL.</param>
+            <returns>
+            An <see cref="T:Com.MasterCard.Sdk.Core.ApiConfigBuilder"/> instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.ApiConfigBuilder.ConsumerKey(System.String)">
+            <summary>
+            Sets the specified consumer key.
+            </summary>
+            <param name="consumerKey">The consumer key.</param>
+            <returns>
+            An <see cref="T:Com.MasterCard.Sdk.Core.ApiConfigBuilder"/> instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.ApiConfigBuilder.PrivateKey(System.Security.Cryptography.AsymmetricAlgorithm)">
+            <summary>
+            Sets the specified X.509 certificate private key.
+            </summary>
+            <param name="privateKey">The private key.</param>
+            <returns>
+            An <see cref="T:Com.MasterCard.Sdk.Core.ApiConfigBuilder"/> instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.ApiConfigBuilder.Build">
+            <summary>
+            Builds the <see cref="T:Com.MasterCard.Sdk.Core.ApiConfig"/> instance using API environment parameters.
+            <para>Also registers the <see cref="T:Com.MasterCard.Sdk.Core.ApiConfig"/> instance into <see cref="T:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration"/> through <c>RegisterConfig</c> method.</para>
+            </summary>
+            <returns>
+            The <see cref="T:Com.MasterCard.Sdk.Core.ApiConfig"/> instance.
+            </returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException"><para>if <c>ApiConfig.HostUrl</c> is <c>null</c> or <c>Empty</c>.</para>
+            <para>if <c>ApiConfig.PrivateKey</c> is <c>null</c>.</para>
+            <para>if <c>ApiConfig.ConsumerKey</c> is <c>null</c> or <c>Empty</c>.</para></exception>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Model.Detail">
+            <summary>
+            The error detail.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Detail.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Model.Detail"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Detail.WithName(System.String)">
+            <summary>
+            Adds an item into the collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Detail instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Detail.WithValue(System.String)">
+            <summary>
+            Adds an item into the collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Detail instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Detail.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Detail.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Detail.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Detail.Equals(Com.MasterCard.Sdk.Core.Model.Detail)">
+            <summary>
+            Returns true if Detail instances are equal
+            </summary>
+            <param name="other">Instance of Detail to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Detail.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.Detail.Name">
+            <summary>
+            Gets or Sets the error detail name.
+            </summary>  
+            <value>A value containing the error detail name.</value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.Detail.Value">
+            <summary>
+            Gets or Sets the error detail name.
+            </summary>  
+            <value>A value containing the error detail name.</value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Model.Details">
+            <summary>
+            The error details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Details.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Model.Details"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Details.WithDetail(Com.MasterCard.Sdk.Core.Model.Detail)">
+            <summary>
+            Adds an item into the collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Details instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Details.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Details.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Details.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Details.Equals(Com.MasterCard.Sdk.Core.Model.Details)">
+            <summary>
+            Returns true if Details instances are equal
+            </summary>
+            <param name="other">Instance of Details to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Details.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.Details.Detail">
+            <summary>
+            Gets or Sets the error detail.
+            </summary>  
+            <value>A collection containing the error detail.</value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Model.ExtensionPoint">
+            <summary>
+            This class contains methods require to set additional details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.ExtensionPoint.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Model.ExtensionPoint"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.ExtensionPoint.WithAny(System.Object)">
+            <summary>
+            Adds an item into the collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The ExtensionPoint instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.ExtensionPoint.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.ExtensionPoint.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.ExtensionPoint.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.ExtensionPoint.Equals(Com.MasterCard.Sdk.Core.Model.ExtensionPoint)">
+            <summary>
+            Returns true if ExtensionPoint instances are equal
+            </summary>
+            <param name="other">Instance of ExtensionPoint to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.ExtensionPoint.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.ExtensionPoint.Any">
+            <summary>
+            Gets or Sets Any
+            </summary>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Client.QueryParams">
+            <summary>
+            Container for query string data used to make service request url.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.QueryParams.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Client.QueryParams"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Client.QueryParams.Add(System.String,System.String)">
+            <summary>
+            Adds the query string parameter.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+            <returns>The QueryParams instance.</returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Client.QueryParams.Params">
+            <summary>
+            Gets the query string parameters.
+            </summary>
+            <value>
+            The query string parameters.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException">
+            <summary>
+            Base class to handle the SDK exception.
+            </summary>
+            <seealso cref="T:System.Exception"/>
+            <seealso cref="T:System.Runtime.Serialization.ISerializable"/>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException"/> class.
+            </summary>
+            <param name="errorCode">Error code.</param>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException"/> class.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            When overridden in a derived class, sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+            <PermissionSet>
+              <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*" />
+              <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="SerializationFormatter" />
+            </PermissionSet>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException.ErrorCode">
+            <summary>
+            Gets or sets the error code
+            </summary>
+            <value>
+            The error code.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException">
+            <summary>
+            The exception that is thrown for errors in an Sdk service request response.
+            </summary>
+            <seealso cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException"/>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException"/> class.
+            </summary>
+            <param name="errorCode">HTTP status code.</param>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException.#ctor(System.Int32,System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException"/> class.
+            </summary>
+            <param name="errorCode">HTTP status code.</param>
+            <param name="message">Error message.</param>
+            <param name="errorContent">Error content.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException"/> class.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            When overridden in a derived class, sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+            <PermissionSet>
+              <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*" />
+              <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="SerializationFormatter" />
+            </PermissionSet>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException.ErrorObject">
+            <summary>
+            Gets or sets the error content.
+            </summary>
+            <value>
+            The error content.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException">
+            <summary>
+            The exception that is thrown for errors in an OAuth request service creation.
+            </summary>
+            <seealso cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException"/>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException"/> class.
+            </summary>
+            <param name="errorCode">HTTP status code.</param>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException"/> class.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkOauthException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <summary>
+            The exception thrown while there is error in serializing or de-serializing. Refer ExceptionData property for additional exception information.
+            </summary>
+            <seealso cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException"/>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException"/> class.
+            </summary>
+            <param name="errorCode">HTTP status code.</param>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException"/> class.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            When overridden in a derived class, sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+            <PermissionSet>
+              <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*" />
+              <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="SerializationFormatter" />
+            </PermissionSet>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException.ExceptionData">
+            <summary>
+            Gets or sets the exception data.
+            </summary>
+            <value>
+            The exception data.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException">
+            <summary>
+            The exception thrown while validating the local fields used in API.
+            </summary>
+            <seealso cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkBaseException"/>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException"/> class.
+            </summary>
+            <param name="errorCode">HTTP status code.</param>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException"/> class.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration">
+            <summary>
+            Provides MasterCard API specific set of configurations such as API environment configuration and additional tracking information.
+            <example>  
+            Set the API environment configurations and additional tracking information.
+            <code> 
+            class Example
+            {
+                static void SetApiConfiguration()  
+                {
+                    // Set the API environment configuration.
+                    var config = new ApiConfig(this.HostUrl, this.ConsumerKey, this.PrivateKey);
+                    MasterCardApiConfiguration.RegisterConfig(config);
+                    
+                    // Set the additional tracking information.
+                    MasterCardApiConfiguration.AdditionalProperty("pluginVersion", "nopCommerce 1.0");
+                }
+            }
+            </code> 
+            </example> 
+            </summary>
+        </member>
+        <member name="F:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.PROD_KEY">
+            <summary>
+            The configuration header name for production environment.
+            </summary>
+        </member>
+        <member name="F:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.SANDBOX_KEY">
+            <summary>
+            The configuration header name for sandbox environment.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.AdditionalProperty(System.String,System.String)">
+            <summary>
+            Adds the specified key and value to the additional property collection. If specified key is exists, it updates the specified value to the collection.
+            </summary>
+            <param name="key">The key of the element to add.</param>
+            <param name="value">The value of the element to add.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.RegisterConfig(Com.MasterCard.Sdk.Core.ApiConfig)">
+            <summary>
+            Registers the API environment configuration.
+            </summary>
+            <param name="config">The API environment configuration.</param>
+            <exception cref="T:System.ArgumentNullException">if specified parameter <c>ApiConfig</c> is <c>null</c>.</exception>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException"><para>if <c>ApiConfig.HostUrl</c> is <c>null</c> or <c>Empty</c>.</para>
+            <para>if <c>ApiConfig.PrivateKey</c> is <c>null</c>.</para>
+            <para>if <c>ApiConfig.ConsumerKey</c> is <c>null</c> or <c>Empty</c>.</para></exception>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.GetConfig(System.String)">
+            <summary>
+            Gets the configuration based on specified environment name.
+            </summary>
+            <param name="name">The environment name.</param>
+            <returns>An <c>ApiConfig</c> instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.GetConfig">
+            <summary>
+            Gets the configuration based on <c>IsSandbox</c> property value.
+            </summary>
+            <returns>An <c>ApiConfig</c> instance.</returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.Sandbox">
+            <summary>
+            Gets or sets a value indicating whether Sandbox environment or not.
+            </summary>
+            <value>
+            <c>true</c> if this Sandbox environment; otherwise, <c>Production</c>.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.ConsumerKey">
+            <summary>
+            Gets or sets the consumer key.
+            </summary>
+            <value>
+            The consumer key.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.PrivateKey">
+            <summary>
+            Gets or sets the X.509 certificate private key.
+            </summary>
+            <value>
+            The private key.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.Configs">
+            <summary>
+            Gets the API environment configurations. Production, Sandbox, Stage are different type of environments.
+            </summary>
+            <value>
+            The API environment configurations.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.AdditionalProperties">
+            <summary>
+            Gets the additional properties such as tracking information.
+            If "pluginVersion" key present in additional properties, API tracker will use its value and adds into each API request header.
+            </summary>
+            <value>
+            The collection containing additional properties such as tracking information.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.MasterCardApiTracking">
+            <summary>
+            Provides a set of methods and properties that helps to trace the API call.
+            <para>Adds API tracker and user agent informations to the specified request's headers.</para>
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.MasterCardApiTracking.Add(RestSharp.IRestClient,RestSharp.IRestRequest,Com.MasterCard.Sdk.Core.Interfaces.IApiTracker)">
+            <summary>
+            Adds API tracker and user agent informations to the specified request's headers.
+            </summary>
+            <param name="client">The client.</param>
+            <param name="request">The request.</param>
+            <param name="apiTracker">The API tracker.</param>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkValidationException"><para>if specified <c>IApiTracker</c> is <c>null</c>.</para>
+            <para>if specified <c>IApiTracker</c> returns <c>null</c> or <c>empty</c> tracking/user-agent informations.</para></exception>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.MasterCardAuthenticator">
+            <summary>
+            Performs below set of operations in each request.
+            <list type="bullet">
+            <item>Adds the Authorization header to request.</item>
+            <item>Adds the API tracking and user-agent informations to request header.</item>
+            <item>Logs the request information if logging is enabled.</item>
+            </list>
+            </summary>
+            <seealso cref="T:RestSharp.Authenticators.IAuthenticator"/>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.MasterCardAuthenticator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.MasterCardAuthenticator"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.MasterCardAuthenticator.Authenticate(RestSharp.IRestClient,RestSharp.IRestRequest)">
+            <summary>
+            Performs below set of operations in each request.
+            <list type="bullet">
+            <item>Adds the Authorization header to request.</item>
+            <item>Adds the API tracking and user-agent informations to request header.</item>
+            <item>Logs the request information if logging is enabled.</item>
+            </list>
+            </summary>
+            <param name="client">The <c>RestSharp.IRestClient</c> instance.</param>
+            <param name="request">The <c>RestSharp.IRestRequest</c> instance.</param>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.MasterCardAuthenticator.ApiTracker">
+            <summary>
+            Gets or sets the API tracker.
+            <para><c>ApiTracker</c> adds the API tacking and user-agent informations to each request.</para>
+            </summary>
+            <value>
+            The API tracker.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.MasterCardSignatureBuilder">
+            <summary>
+            Generates the MasterCard API specific OAuth authorization signature header and adds authorization signature to each request header.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.MasterCardSignatureBuilder.Build(RestSharp.IRestClient,RestSharp.IRestRequest)">
+            <summary>
+            Generates the MasterCard API specific authorization signature header and adds authorization signature to each request header.
+            </summary>
+            <param name="client">The <c>RestSharp.IRestClient</c> instance.</param>
+            <param name="request">The <c>RestSharp.IRestRequest</c> instance.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.MasterCardSignatureBuilder.UpdateParamsBeforeGeneratingSignature(Com.MasterCard.Sdk.Core.Oauth.OauthParameters,RestSharp.IRestRequest)">
+            <summary>
+            Updates the OAuth parameters before generating the OAuth signature.
+            </summary>
+            <param name="oAuthParams">The OAuth parameters.</param>
+            <param name="request">The request.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.MasterCardSignatureBuilder.UpdateParamsAfterGeneratingSignature(Com.MasterCard.Sdk.Core.Oauth.OauthParameters,RestSharp.IRestRequest)">
+            <summary>
+            Updates the OAuth parameters after generating OAuth signature.
+            </summary>
+            <param name="oAuthParams">The OAuth parameters.</param>
+            <param name="request">The request.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.MasterCardSignatureBuilder.RemoveHeaders(RestSharp.IRestRequest)">
+            <summary>
+            Removes the headers.
+            </summary>
+            <param name="request">The request.</param>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Model.AccessTokenResponse">
+            <summary>
+            This class enables to set and get access token response properties.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.AccessTokenResponse.WithOauthToken(System.String)">
+            <summary>
+            Sets the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            The AccessTokenResponse instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.AccessTokenResponse.WithOauthTokenSecret(System.String)">
+            <summary>
+            Sets the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            The AccessTokenResponse instance.
+            </returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.AccessTokenResponse.OauthToken">
+            <summary>
+            Gets or sets the access token.
+            </summary>
+            <value>
+            The access token.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.AccessTokenResponse.OauthTokenSecret">
+            <summary>
+            Gets or sets the OAuth secret.
+            </summary>
+            <value>
+            The OAuth secret.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Model.Error">
+            <summary>
+            This class contains methods require for error handling.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Model.Error"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.WithDescription(System.String)">
+            <summary>
+            Adds an item into the collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Error instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.WithReasonCode(System.String)">
+            <summary>
+            Adds an item into the collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Error instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.WithRecoverable(System.Nullable{System.Boolean})">
+            <summary>
+            Adds an item into the collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Error instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.WithSource(System.String)">
+            <summary>
+            Adds an item into the collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Error instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.WithDetails(Com.MasterCard.Sdk.Core.Model.Details)">
+            <summary>
+            Adds an item into the collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Error instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.WithExtensionPoint(Com.MasterCard.Sdk.Core.Model.ExtensionPoint)">
+            <summary>
+            Adds an item into the collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Error instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.Equals(Com.MasterCard.Sdk.Core.Model.Error)">
+            <summary>
+            Returns true if Error instances are equal
+            </summary>
+            <param name="other">Instance of Error to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Error.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.Error.Description">
+            <summary>
+            Gets or Sets the error description.
+            </summary>  
+            <value>A value containing the error description.</value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.Error.ReasonCode">
+            <summary>
+            Gets or Sets the error reason code.
+            </summary>  
+            <value>A value containing the error reason code.</value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.Error.Recoverable">
+            <summary>
+            Gets or Sets the error recoverable info.
+            </summary>  
+            <value>A value containing the error recoverable info.</value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.Error.Source">
+            <summary>
+            Gets or Sets the source of error.
+            </summary>  
+            <value>A value containing the source of error.</value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.Error.Details">
+            <summary>
+            Gets or Sets the error details.
+            </summary>  
+            <value>A value containing the error details.</value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.Error.ExtensionPoint">
+            <summary>
+            Gets or Sets the ExtensionPoint for future enhancement.
+            </summary>  
+            <value>A value containing the ExtensionPoint for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Model.Errors">
+            <summary>
+            This class contains methods require for error handling.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Errors.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Model.Errors"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Errors.WithError(Com.MasterCard.Sdk.Core.Model.Error)">
+            <summary>
+            Adds an item into the collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Errors instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Errors.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Errors.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Errors.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Errors.Equals(Com.MasterCard.Sdk.Core.Model.Errors)">
+            <summary>
+            Returns true if Errors instances are equal
+            </summary>
+            <param name="other">Instance of Errors to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.Errors.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.Errors.Error">
+            <summary>
+            Gets or Sets Error
+            </summary>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse">
+            <summary>
+            This class enables to set and get request token response properties.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.WithOauthToken(System.String)">
+            <summary>
+            Sets the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            The RequestTokenResponse instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.WithXoauthRequestAuthUrl(System.String)">
+            <summary>
+            Sets the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            The RequestTokenResponse instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.WithOauthCallbackConfirmed(System.Boolean)">
+            <summary>
+            Sets the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            The RequestTokenResponse instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.WithOauthExpiresIn(System.String)">
+            <summary>
+            Sets the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            The RequestTokenResponse instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.WithOauthTokenSecret(System.String)">
+            <summary>
+            Sets the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            The RequestTokenResponse instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.WithRedirectUrl(System.String)">
+            <summary>
+            Sets the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            The RequestTokenResponse instance.
+            </returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.OauthToken">
+            <summary>
+            Gets or sets the request token.
+            </summary>
+            <value>
+            The request token.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.XoauthRequestAuthUrl">
+            <summary>
+            Gets or sets the authorize URL.
+            </summary>
+            <value>
+            The authorize URL.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.OauthCallbackConfirmed">
+            <summary>
+            Gets or sets a value indicating whether [callback confirmed].
+            </summary>
+            <value>
+              <c>true</c> if callback confirmed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.OauthExpiresIn">
+            <summary>
+            Gets or sets the OAuth expires in.
+            </summary>
+            <value>
+            The OAuth expires in.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.OauthTokenSecret">
+            <summary>
+            Gets or sets the OAuth secret.
+            </summary>
+            <value>
+            The OAuth secret.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Model.RequestTokenResponse.RedirectUrl">
+            <summary>
+            Gets or sets the redirect URL.
+            </summary>
+            <value>
+            The redirect URL.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Oauth.OauthParameters">
+            <summary>
+            Stores the parameters used to make OAuth requests.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthParameters.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Oauth.OauthParameters"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthParameters.AddParameter(System.String,System.String)">
+            <summary>
+            Adds the OAuth parameter.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthParameters.Get(System.String)">
+            <summary>
+            Gets the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>The OAuth parameter</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthParameters.Put(System.String,System.String)">
+            <summary>
+            Adds or updates the OAuth parameter.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthParameters.PutAll(System.Collections.Generic.SortedList{System.String,Com.MasterCard.Sdk.Core.Oauth.SortedSet{System.String}})">
+            <summary>
+            Adds all the OAuth parameters.
+            </summary>
+            <param name="authParams">The OAuth parameters.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthParameters.Remove(System.String,System.String)">
+            <summary>
+            Removes the OAuth parameter.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Oauth.OauthParameters.BaseParameters">
+            <summary>
+            Gets the base OAuth parameters.
+            </summary>
+            <value>
+            The base parameters.
+            </value>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthUtil.GetNonce">
+            <summary>
+            Gets the nonce.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthUtil.GetTimestamp">
+            <summary>
+            Gets the timestamps.
+            </summary>
+            <returns>The timestamps.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthUtil.GetBase64EncodedBodyHash(System.String)">
+            <summary>
+            Gets the base64 encoded body hash.
+            </summary>
+            <param name="body">The body.</param>
+            <returns>The base64 encoded body hash.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthUtil.GetSignatureHash(System.String,System.Security.Cryptography.AsymmetricAlgorithm)">
+            <summary>
+            Gets the signature hash.
+            </summary>
+            <param name="baseString">The base string.</param>
+            <param name="KeyStore">The certificate key store.</param>
+            <returns>Base64 signature hash.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthUtil.GetSignatureBaseString(System.String,System.String,Com.MasterCard.Sdk.Core.Oauth.OauthParameters)">
+            <summary>
+            Gets the signature base string.
+            </summary>
+            <param name="urlToGenerateSignature">The URL to generate signature.</param>
+            <param name="method">The HTTP method type.</param>
+            <param name="oAuthParams">The authentication parameters.</param>
+            <returns>The signature base string.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.OauthUtil.BuildAuthHeaderString(Com.MasterCard.Sdk.Core.Oauth.OauthParameters)">
+            <summary>
+            Builds the authentication header string.
+            </summary>
+            <param name="oAuthParams">The o authentication parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Oauth.QueryParameterComparer">
+            <summary>
+            Comparer class used to perform the sorting of the query parameters.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.QueryParameterComparer.Compare(System.String,System.String)">
+            <summary>
+            Compares two query strings and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+            <param name="x">The first query string to compare.</param>
+            <param name="y">The second query string to compare.</param>
+            <returns>
+            A signed integer that indicates the relative values of <paramref name="x" /> and <paramref name="y" />, as shown in the following table.Value Meaning Less than zero<paramref name="x" /> is less than <paramref name="y" />.Zero<paramref name="x" /> equals <paramref name="y" />.Greater than zero<paramref name="x" /> is greater than <paramref name="y" />.
+            </returns>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Oauth.SortedSet`1">
+            <summary>
+            Represents a collection of objects that is maintained in sorted order.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.SortedSet`1.#ctor(System.Collections.Generic.IComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Oauth.SortedSet`1"/> class.
+            </summary>
+            <param name="comparer">The comparer.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.SortedSet`1.Contains(`0)">
+            <summary>
+            Determines whether contains the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            true if the collection contains an element with the specified key; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Oauth.SortedSet`1.Add(`0)">
+            <summary>
+            Adds the specified value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Oauth.SortedSet`1.Min">
+            <summary>
+            Gets the minimum.
+            </summary>
+            <value>
+            The minimum.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Oauth.SortedSet`1.Max">
+            <summary>
+            Gets the maximum.
+            </summary>
+            <value>
+            The maximum.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.RequestResponseLogger">
+            <summary>
+            Logs the request and response content.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.RequestResponseLogger.LogRequest(RestSharp.IRestClient,RestSharp.IRestRequest)">
+            <summary>
+            Logs the request content.
+            </summary>
+            <param name="client">The <c>RestSharp.IRestClient</c> instance.</param>
+            <param name="request">The <c>RestSharp.IRestRequest</c> instance.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.RequestResponseLogger.LogResponse(RestSharp.IRestClient,RestSharp.IRestResponse)">
+            <summary>
+            Logs the response content.
+            </summary>
+            <param name="client">The client.</param>
+            <param name="response">The response.</param>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Serializers.EncodedUrlSerializer">
+            <summary>
+            Implements the ISerializer to serialize and de-serialize urlencoded response content.
+            </summary>
+            <seealso cref="T:Com.MasterCard.Sdk.Core.Interfaces.ISerializer"/>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Interfaces.ISerializer">
+            <summary>
+            Provides interface design to serialize and de-serialize request response content.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Interfaces.ISerializer.Serialize(System.Object)">
+            <summary>
+            Serializes the specified object.
+            </summary>
+            <param name="value">The object to be serialized.</param>
+            <returns>
+            The serialized object.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Interfaces.ISerializer.Deserialize(RestSharp.IRestResponse,System.Type)">
+            <summary>
+            De-serializes the specified response content with serializer.
+            </summary>
+            <param name="response">The response.</param>
+            <param name="type">The type.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Interfaces.ISerializer.Deserialize``1(RestSharp.IRestResponse)">
+            <summary>
+            De-serializes the specified response content with serializer.
+            </summary>
+            <typeparam name="T">The response type.</typeparam>
+            <param name="response">The response.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Interfaces.ISerializer.Deserialize``1(System.String)">
+            <summary>
+            De-serializes the specified response content with serializer.
+            </summary>
+            <typeparam name="T">The response type.</typeparam>
+            <param name="content">The content.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Interfaces.ISerializer.Encoding">
+            <summary>
+            Gets or sets the encoding scheme.
+            </summary>
+            <value>
+            The encoding scheme.
+            </value>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.EncodedUrlSerializer.Serialize(System.Object)">
+            <summary>
+            Serializes the specified object.
+            </summary>
+            <param name="value">The object to be serialized.</param>
+            <returns>
+            The null string If specified value is not the string type otherwise returns the same specified value.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.EncodedUrlSerializer.Deserialize(RestSharp.IRestResponse,System.Type)">
+            <summary>
+            De-serializes the specified response content with serializer.
+            </summary>
+            <param name="response">The response.</param>
+            <param name="type">The type.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.EncodedUrlSerializer.Deserialize``1(RestSharp.IRestResponse)">
+            <summary>
+            De-serializes the specified response content with serializer.
+            </summary>
+            <typeparam name="T">The response type.</typeparam>
+            <param name="response">The response.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.EncodedUrlSerializer.Deserialize``1(System.String)">
+            <summary>
+            De-serializes the specified response content with serializer.
+            </summary>
+            <typeparam name="T">The response type.</typeparam>
+            <param name="content">The content.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Serializers.EncodedUrlSerializer.Encoding">
+            <summary>
+            Gets or sets the encoding scheme. 
+            </summary>
+            <value>
+            The encoding scheme.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Interfaces.IXmlSerializer">
+            <summary>
+            Provides interface design to serialize and de-serialize XML request response content.
+            </summary>
+            <seealso cref="T:Com.MasterCard.Sdk.Core.Interfaces.ISerializer"/>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Interfaces.IXmlSerializer.XmlSettings">
+            <summary>
+            Gets or sets the XML settings.
+            </summary>
+            <value>
+            The XML settings.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Interfaces.IXmlSerializer.OmitParentNode">
+            <summary>
+            Gets or sets a value indicating whether to write an parent node declaration during de-serialization.
+            </summary>
+            <value>
+            <c>true</c> to omit the parent node declaration; otherwise, <c>false</c>. The default is false.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Interfaces.IXmlSerializer.OmitNamespaces">
+            <summary>
+            Gets the omit namespaces.
+            </summary>
+            <value>
+            The omit namespaces.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Serializers.JsonSerializer">
+            <summary>
+            Implements the ISerializer to serialize and de-serialize JSON request response content.
+            </summary>
+            <seealso cref="T:Com.MasterCard.Sdk.Core.Interfaces.ISerializer"/>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.JsonSerializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Serializers.JsonSerializer"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.JsonSerializer.Serialize(System.Object)">
+            <summary>
+            Serializes the specified object.
+            </summary>
+            <param name="value">The object to be serialized.</param>
+            <returns>
+            The serialized object.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.JsonSerializer.Deserialize(RestSharp.IRestResponse,System.Type)">
+            <summary>
+            De-serializes the specified byte array with serializer.
+            </summary>
+            <param name="response">The response.</param>
+            <param name="type">The type.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.JsonSerializer.Deserialize``1(RestSharp.IRestResponse)">
+            <summary>
+            De-serializes the specified response content with serializer.
+            </summary>
+            <typeparam name="T">The response type.</typeparam>
+            <param name="response">The response.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.JsonSerializer.Deserialize``1(System.String)">
+            <summary>
+            De-serializes the specified response content with serializer.
+            </summary>
+            <typeparam name="T">The response type.</typeparam>
+            <param name="content">The content.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.JsonSerializer.ConvertType(System.Object,System.Type)">
+            <summary>
+            Converts the type.
+            </summary>
+            <param name="source">The source instance.</param>
+            <param name="dest">The destination object type.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Serializers.JsonSerializer.Encoding">
+            <summary>
+            Gets or sets the encoding scheme.
+            </summary>
+            <value>
+            The encoding scheme.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Serializers.SdkSerializerFactory">
+            <summary>
+            Serializer factory, returns instance of serializer based on specified depend on request and response content type.
+            <para>Also custom <see cref="T:Com.MasterCard.Sdk.Core.Interfaces.ISerializer"/> instance configured through <c>SetSerializer</c> with specified the content type.</para>
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.SdkSerializerFactory.GetSerializer(System.String)">
+            <summary>
+            Gets the serializer based on specified content type.
+            <para>
+            Method returns below possible <see cref="T:Com.MasterCard.Sdk.Core.Interfaces.ISerializer"/> implementation based on specified content type.
+            <list type="bullet">
+            <item>application/xml: <see cref="T:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer"/></item>
+            <item>application/json: <see cref="T:Com.MasterCard.Sdk.Core.Serializers.JsonSerializer"/></item>
+            <item>application/x-www-form-urlencoded: <see cref="T:Com.MasterCard.Sdk.Core.Serializers.EncodedUrlSerializer"/></item>
+            </list>
+            </para>
+              <code>
+                var serializer = SdkSerializerFactory.GetSerializer("application/xml");
+              </code>
+            </summary>
+            <param name="contentType">Type of the content.</param>
+            <returns>
+            The <see cref="T:Com.MasterCard.Sdk.Core.Interfaces.ISerializer"/> instance.
+            </returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <para>if <c>contentType</c> is <c>null</c> or <c>Empty</c>.</para>
+            </exception>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.SdkSerializerFactory.SetSerializer(System.String,Com.MasterCard.Sdk.Core.Interfaces.ISerializer)">
+            <summary>
+            Sets the <see cref="T:Com.MasterCard.Sdk.Core.Interfaces.ISerializer"/> instance with specified content type.
+              <code>
+                SdkSerializerFactory.SetSerializer("application/xml", new CustomXmlSerializer());
+              </code>
+            </summary>
+            <param name="contentType">Type of the content.</param>
+            <param name="serializer">The <see cref="T:Com.MasterCard.Sdk.Core.Interfaces.ISerializer"/> instance.</param>
+        </member>
+        <member name="T:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer">
+            <summary>
+            Implements the IXmlSerializer to serialize and de-serialize XML request response content.
+            </summary>
+            <seealso cref="T:Com.MasterCard.Sdk.Core.Interfaces.IXmlSerializer"/>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer.Serialize(System.Object)">
+            <summary>
+            Serializes the specified object.
+            </summary>
+            <param name="value">The object to be serialized.</param>
+            <returns>
+            The serialized object.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer.Deserialize(RestSharp.IRestResponse,System.Type)">
+            <summary>
+            De-serializes the specified response content with serializer.
+            </summary>
+            <param name="response">The response.</param>
+            <param name="type">The type to deserialize.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            </exception>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer.Deserialize``1(RestSharp.IRestResponse)">
+            <summary>
+            De-serializes the specified response content with serializer.
+            </summary>
+            <typeparam name="T">The response type.</typeparam>
+            <param name="response">The response.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            </exception>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer.Deserialize``1(System.String)">
+            <summary>
+            De-serializes the specified response content with serializer.
+            </summary>
+            <typeparam name="T">The response type.</typeparam>
+            <param name="content">The content.</param>
+            <returns>
+            De-serialized type instance.
+            </returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException"></exception>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer.XmlSettings">
+            <summary>
+            Gets or sets the XML settings.
+            </summary>
+            <value>
+            The XML settings.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer.OmitParentNode">
+            <summary>
+            Gets or sets a value indicating whether to write an parent node declaration
+            during de-serialization.
+            </summary>
+            <value>
+            <c>true</c> to omit the parent node declaration; otherwise, <c>false</c>. The default is true.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer.OmitNamespaces">
+            <summary>
+            Gets the omit namespaces. E.g. xmlns:xsi.
+            </summary>
+            <value>
+            The omit namespaces.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Sdk.Core.Serializers.XmlSerializer.Encoding">
+            <summary>
+            Gets or sets the encoding scheme.
+            </summary>
+            <value>
+            The encoding scheme.
+            </value>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.ExtentionMethods.SnakeCaseToPascal(System.String)">
+            <summary>
+            Snakes the case to pascal.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.ExtentionMethods.IsEmpty(System.String)">
+            <summary>
+            Determines whether string is empty or not.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>true; if specified value is null or empty</returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Util.SdkUtil.SelectHeaderContentType(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Select the Content-Type header's value from the given content-type array:
+            use the first one defined in 'consumes'.
+            </summary>
+            <param name="contentTypes">The Content-Type array to select from.</param>
+            <returns>
+            The Content-Type header to use.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Sdk.Core.Util.SdkUtil.SelectHeaderAccept(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Select the Accept header's value from the given accepts array:
+            use all of them (joining into a string).
+            </summary>
+            <param name="accepts">The accepts array to select from.</param>
+            <returns>The Accept header to use.</returns>
+        </member>
+    </members>
+</doc>

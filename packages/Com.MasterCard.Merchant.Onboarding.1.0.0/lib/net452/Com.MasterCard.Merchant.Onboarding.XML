@@ -1,0 +1,2171 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Com.MasterCard.Merchant.Onboarding</name>
+    </assembly>
+    <members>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Api.SingleMerchantUploadApi">
+            <summary>
+            Represents a collection of functions to interact with the API endpoints.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Api.SingleMerchantUploadApi.Create(System.String,Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload,Com.MasterCard.Sdk.Core.ApiConfig)">
+            <summary>
+            Single Merchant Upload Service. This service is used by service providers to onboard merchant information one at a time to Masterpass through the project. Returns a MerchantDownload payload that will contain records of merchants that have, or have not, enabled 3-D Secure.
+            <example>  
+            SingleMerchantUploadApi usage.
+            <code> 
+            private void SingleMerchantUploadApiExample()  
+            {
+                try
+                {
+                    MerchantDownload response = SingleMerchantUploadApi.Create(projectId, merchantUpload);
+                    
+                    // TODO: Handle response.
+                }
+                catch (SdkErrorResponseException ex)
+                {
+                    if (ex.ErrorObject != null &amp;&amp; ex.ErrorObject is Com.MasterCard.Sdk.Core.Model.Errors)
+                    {
+                        var errors = ex.ErrorObject as Com.MasterCard.Sdk.Core.Model.Errors;
+                    
+                        // TODO: Handle errors.
+                    }
+                }
+                catch (SdkSerializationException ex)
+                {
+                    if (ex.ExceptionData != null)
+                    {
+                        // TODO: Handle ex.ExceptionData.
+                    }
+                }
+            }
+            </code> 
+            </example> 
+            </summary>
+            <param name="projectId">Identifier of project created in the Merchant Portal.</param>
+            <param name="merchantUpload">Merchant upload request.</param>
+            <param name="config">The environment configuration.</param>
+            <returns>Instance of MerchantDownload.</returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException">
+            <para>If API service returns a response which has other than 200 HTTP status code.</para>
+            <para>Use the <c>ErrorObject</c> property in case of <c>SdkErrorResponseException</c> to extract the error information.</para>
+            </exception>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <para>If request/response is unable to serialized/de-serialized.</para>
+            </exception>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Api.SingleMerchantUploadApi.ApiClient">
+            <summary>
+            Gets the API client. <c>ApiClient</c> is responsible for the API call.
+            </summary>
+            <value>
+            The API client instance.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Api.SingleMerchantValidateApi">
+            <summary>
+            Represents a collection of functions to interact with the API endpoints.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Api.SingleMerchantValidateApi.Create(System.String,Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload,Com.MasterCard.Sdk.Core.ApiConfig)">
+            <summary>
+            Single Merchant Validate Service.. This service is used by service providers to validate merchant upload prior to actual onboarding submission. This process mimics the validation XML process via the user interface used within the merchant portal. Returns a ValidateFileResponse payload that will contain 3DS and/or non-3DS merchant status records.
+            <example>  
+            SingleMerchantValidateApi usage.
+            <code> 
+            private void SingleMerchantValidateApiExample()  
+            {
+                try
+                {
+                    ValidateFileResponse response = SingleMerchantValidateApi.Create(projectId, merchantUpload);
+                    
+                    // TODO: Handle response.
+                }
+                catch (SdkErrorResponseException ex)
+                {
+                    if (ex.ErrorObject != null &amp;&amp; ex.ErrorObject is Com.MasterCard.Sdk.Core.Model.Errors)
+                    {
+                        var errors = ex.ErrorObject as Com.MasterCard.Sdk.Core.Model.Errors;
+                    
+                        // TODO: Handle errors.
+                    }
+                }
+                catch (SdkSerializationException ex)
+                {
+                    if (ex.ExceptionData != null)
+                    {
+                        // TODO: Handle ex.ExceptionData.
+                    }
+                }
+            }
+            </code> 
+            </example> 
+            </summary>
+            <param name="projectId">Identifier of project created in the Merchant Portal.</param>
+            <param name="merchantUpload">Merchant upload request.</param>
+            <param name="config">The environment configuration.</param>
+            <returns>Instance of ValidateFileResponse.</returns>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkErrorResponseException">
+            <para>If API service returns a response which has other than 200 HTTP status code.</para>
+            <para>Use the <c>ErrorObject</c> property in case of <c>SdkErrorResponseException</c> to extract the error information.</para>
+            </exception>
+            <exception cref="T:Com.MasterCard.Sdk.Core.Exceptions.SdkSerializationException">
+            <para>If request/response is unable to serialized/de-serialized.</para>
+            </exception>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Api.SingleMerchantValidateApi.ApiClient">
+            <summary>
+            Gets the API client. <c>ApiClient</c> is responsible for the API call.
+            </summary>
+            <value>
+            The API client instance.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Client.ApiTracker">
+            <summary>
+            Implements the <see cref="T:Com.MasterCard.Sdk.Core.Interfaces.IApiTracker"/> to get the API tracking and user-agent informations.
+            <para> <c>ApiClient</c> uses the <c>ApiTracker</c> in each API request for API tacking.</para>
+            <example>Returns the API tracking and user-agent informations as below:
+            <code>
+            API-Call-Tracker: base_sdk_version=1.1.0,client_sdk_version=1.0.0,lang_name=C#,lang_version=4.0.30319.42000
+            User-Agent: MC Open API OAuth Framework v1.0-C#
+            </code></example>
+            </summary>
+            <seealso cref="T:Com.MasterCard.Sdk.Core.Interfaces.IApiTracker"/>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Client.ApiTracker.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Client.ApiTracker"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Client.ApiTracker.GetTrackingInfo">
+            <summary>
+            Gets the API tracking information.
+            <para>Also "pluginVersion" key presents in <see cref="P:Com.MasterCard.Sdk.Core.MasterCardApiConfiguration.AdditionalProperties"/> collection, its value is appended in tracking information.</para>
+            </summary>
+            <returns>
+            The string containing tracking keys and values.
+            </returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Client.ApiTracker.GetUserAgentInfo">
+            <summary>
+            Gets the user-agent information.
+            </summary>
+            <returns>
+            The string containing user-agent value.
+            </returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Client.ApiTracker.ClientSdkVersion">
+            <summary>
+            Gets the SDK version.
+            </summary>
+            <value>
+            The SDK version.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Client.ApiTracker.Language">
+            <summary>
+            Gets the name of the language.
+            </summary>
+            <value>
+            The name of the language.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Client.ApiTracker.LanguageVersion">
+            <summary>
+            Gets the language version.
+            </summary>
+            <value>
+            The language version.
+            </value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Client.ApiTracker.PluginVersion">
+            <summary>
+            Gets the plug-in version.
+            </summary>
+            <value>
+            The plug-in version.
+            </value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.Acquirer">
+            <summary>
+            This class contains merchant&#39;s acquirer details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.Acquirer"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.WithAction(System.String)">
+            <summary>
+            Sets the specified value to Action.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Acquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.WithId(System.String)">
+            <summary>
+            Sets the specified value to Id.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Acquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.WithName(System.String)">
+            <summary>
+            Sets the specified value to Name.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Acquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.WithAssignedMerchantId(System.String)">
+            <summary>
+            Sets the specified value to AssignedMerchantId.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Acquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.WithPassword(System.String)">
+            <summary>
+            Sets the specified value to Password.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Acquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Acquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.Equals(Com.MasterCard.Merchant.Onboarding.Model.Acquirer)">
+            <summary>
+            Returns true if Acquirer instances are equal
+            </summary>
+            <param name="other">Instance of Acquirer to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.Action">
+            <summary>
+            Gets or Sets the merchant acquirer action. Valid values are C(Create), U(Update), and D (Delete).
+            </summary>  
+            <value>A value containing the merchant acquirer action. Valid values are C(Create), U(Update), and D (Delete).</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.Id">
+            <summary>
+            Gets or Sets the merchant's acquirer id. For example, 453214.
+            </summary>  
+            <value>A value containing the merchant's acquirer id. For example, 453214.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.Name">
+            <summary>
+            Gets or Sets the merchant's acquirer name. For example, Test Acquirer. 3DS merchants must reduce their character limit to 250 to meet Cardinal Commerce’s API specifications.
+            </summary>  
+            <value>A value containing the merchant's acquirer name. For example, Test Acquirer. 3DS merchants must reduce their character limit to 250 to meet Cardinal Commerce’s API specifications.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.AssignedMerchantId">
+            <summary>
+            Gets or Sets the acquirer assigned merchant id. For example, 435t6543.
+            </summary>  
+            <value>A value containing the acquirer assigned merchant id. For example, 435t6543.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.Password">
+            <summary>
+            Gets or Sets the acquirer password for 3DS setup. For example, Visa. 3DS merchants must reduce their character limit to 8 to meet Cardinal Commerce’s API specifications.
+            </summary>  
+            <value>A value containing the acquirer password for 3DS setup. For example, Visa. 3DS merchants must reduce their character limit to 8 to meet Cardinal Commerce’s API specifications.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Acquirer.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.Address">
+            <summary>
+            This class contains merchant&#39;s address details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.Address"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.WithCity(System.String)">
+            <summary>
+            Sets the specified value to City.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Address instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.WithCountry(System.String)">
+            <summary>
+            Sets the specified value to Country.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Address instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.WithCountrySubdivision(System.String)">
+            <summary>
+            Sets the specified value to CountrySubdivision.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Address instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.WithLine1(System.String)">
+            <summary>
+            Sets the specified value to Line1.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Address instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.WithLine2(System.String)">
+            <summary>
+            Sets the specified value to Line2.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Address instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.WithLine3(System.String)">
+            <summary>
+            Sets the specified value to Line3.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Address instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.WithPostalCode(System.String)">
+            <summary>
+            Sets the specified value to PostalCode.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Address instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Address instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.Equals(Com.MasterCard.Merchant.Onboarding.Model.Address)">
+            <summary>
+            Returns true if Address instances are equal
+            </summary>
+            <param name="other">Instance of Address to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Address.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Address.City">
+            <summary>
+            Gets or Sets the merchant's city. For example, New York.
+            </summary>  
+            <value>A value containing the merchant's city. For example, New York.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Address.Country">
+            <summary>
+            Gets or Sets the merchant's country. Standard 2-letter ISO 3166 country codes. For example, US.
+            </summary>  
+            <value>A value containing the merchant's country. Standard 2-letter ISO 3166 country codes. For example, US.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Address.CountrySubdivision">
+            <summary>
+            Gets or Sets the merchant’s country subdivision. Defined by ISO 3166-1 alpha-2 digit code. For example, US-VA is Virginia, US-OH is Ohio.
+            </summary>  
+            <value>A value containing the merchant’s country subdivision. Defined by ISO 3166-1 alpha-2 digit code. For example, US-VA is Virginia, US-OH is Ohio.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Address.Line1">
+            <summary>
+            Gets or Sets the merchant’s address line 1. For example, 1 Main Street.
+            </summary>  
+            <value>A value containing the merchant’s address line 1. For example, 1 Main Street.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Address.Line2">
+            <summary>
+            Gets or Sets the merchant’s address line 2.
+            </summary>  
+            <value>A value containing the merchant’s address line 2.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Address.Line3">
+            <summary>
+            Gets or Sets the merchant’s address line 3.
+            </summary>  
+            <value>A value containing the merchant’s address line 3.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Address.PostalCode">
+            <summary>
+            Gets or Sets the merchant’s postal code. For example, 10001.
+            </summary>  
+            <value>A value containing the merchant’s postal code. For example, 10001.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Address.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.AuthOption">
+            <summary>
+            This class contains the authentication options.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.AuthOption"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.WithCardBrand(System.String)">
+            <summary>
+            Sets the specified value to CardBrand.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The AuthOption instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.WithType(System.String)">
+            <summary>
+            Sets the specified value to Type.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The AuthOption instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The AuthOption instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.Equals(Com.MasterCard.Merchant.Onboarding.Model.AuthOption)">
+            <summary>
+            Returns true if AuthOption instances are equal
+            </summary>
+            <param name="other">Instance of AuthOption to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.CardBrand">
+            <summary>
+            Gets or Sets Card brands enrolled for advanced authentication. For example, for Mastercard, use MASTER.
+            </summary>  
+            <value>A value containing Card brands enrolled for advanced authentication. For example, for Mastercard, use MASTER.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.Type">
+            <summary>
+            Gets or Sets Authentication type.
+            </summary>  
+            <value>A value containing Authentication type.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.AuthOption.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand">
+            <summary>
+            This class contains the branding details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.WithCheckoutId(System.String)">
+            <summary>
+            Sets the specified value to CheckoutId.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The CheckoutBrand instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.WithCheckoutIdentifier(System.String)">
+            <summary>
+            Sets the specified value to CheckoutIdentifier.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The CheckoutBrand instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.WithName(System.String)">
+            <summary>
+            Sets the specified value to Name.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The CheckoutBrand instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.WithDisplayName(System.String)">
+            <summary>
+            Sets the specified value to DisplayName.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The CheckoutBrand instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.WithProductionUrl(System.String)">
+            <summary>
+            Sets the specified value to ProductionUrl.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The CheckoutBrand instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.WithSandboxUrl(System.String)">
+            <summary>
+            Sets the specified value to SandboxUrl.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The CheckoutBrand instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.WithLogoUrl(System.String)">
+            <summary>
+            Sets the specified value to LogoUrl.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The CheckoutBrand instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The CheckoutBrand instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.Equals(Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand)">
+            <summary>
+            Returns true if CheckoutBrand instances are equal
+            </summary>
+            <param name="other">Instance of CheckoutBrand to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.CheckoutId">
+            <summary>
+            Gets or Sets If the checkout brand exists for update action, then the checkout id is mandatory. For example, a4c411by7lob4i81xb6r41i820mw3n151.
+            </summary>  
+            <value>A value containing If the checkout brand exists for update action, then the checkout id is mandatory. For example, a4c411by7lob4i81xb6r41i820mw3n151.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.CheckoutIdentifier">
+            <summary>
+            Gets or Sets Used by the merchant upload response.
+            </summary>  
+            <value>A value containing Used by the merchant upload response.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.Name">
+            <summary>
+            Gets or Sets Name displayed on Masterpass site during checkout when no logo is provided. For example, XYZ Pizza.
+            </summary>  
+            <value>A value containing Name displayed on Masterpass site during checkout when no logo is provided. For example, XYZ Pizza.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.DisplayName">
+            <summary>
+            Gets or Sets the display name. For example, XYZ Pizza.
+            </summary>  
+            <value>A value containing the display name. For example, XYZ Pizza.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.ProductionUrl">
+            <summary>
+            Gets or Sets the production checkout URL. For example, https://xyzpizza.com
+            </summary>  
+            <value>A value containing the production checkout URL. For example, https://xyzpizza.com</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.SandboxUrl">
+            <summary>
+            Gets or Sets the sandbox checkout URL. For example, https://test.xyzpizza.com
+            </summary>  
+            <value>A value containing the sandbox checkout URL. For example, https://test.xyzpizza.com</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.LogoUrl">
+            <summary>
+            Gets or Sets Merchant logo displayed on Masterpass site during checkout. If not specified, the Name is displayed. For example, http://xyzpizza.com/logo.jpg
+            </summary>  
+            <value>A value containing Merchant logo displayed on Masterpass site during checkout. If not specified, the Name is displayed. For example, http://xyzpizza.com/logo.jpg</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.Emails">
+            <summary>
+            This class contains merchant&#39;s email details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Emails.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.Emails"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Emails.WithEmailAddress(System.String)">
+            <summary>
+            Adds the specified value to EmailAddress collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Emails instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Emails.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Emails.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Emails.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Emails.Equals(Com.MasterCard.Merchant.Onboarding.Model.Emails)">
+            <summary>
+            Returns true if Emails instances are equal
+            </summary>
+            <param name="other">Instance of Emails to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Emails.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Emails.EmailAddress">
+            <summary>
+            Gets or Sets the merchant's email address. For example, email@xyzpizza.com.
+            </summary>  
+            <value>A collection containing the merchant's email address. For example, email@xyzpizza.com.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint">
+            <summary>
+            This class contains methods require to set additional details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint.WithAny(System.Object)">
+            <summary>
+            Sets the specified value to Any.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The ExtensionPoint instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint.Equals(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Returns true if ExtensionPoint instances are equal
+            </summary>
+            <param name="other">Instance of ExtensionPoint to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint.Any">
+            <summary>
+            Gets or Sets Any
+            </summary>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.Merchant">
+            <summary>
+            This class contains various merchant details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.Merchant"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.WithSPMerchantId(System.String)">
+            <summary>
+            Sets the specified value to SPMerchantId.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Merchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.WithAction(System.String)">
+            <summary>
+            Sets the specified value to Action.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Merchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.WithProfile(Com.MasterCard.Merchant.Onboarding.Model.Profile)">
+            <summary>
+            Sets the specified value to Profile.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Merchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.WithRewardProgram(Com.MasterCard.Merchant.Onboarding.Model.RewardProgram)">
+            <summary>
+            Sets the specified value to RewardProgram.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Merchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.WithCheckoutBrand(Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand)">
+            <summary>
+            Adds the specified value to CheckoutBrand collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Merchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.WithAuthOption(Com.MasterCard.Merchant.Onboarding.Model.AuthOption)">
+            <summary>
+            Adds the specified value to AuthOption collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Merchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.WithMerchantAcquirer(Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer)">
+            <summary>
+            Adds the specified value to MerchantAcquirer collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Merchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.WithCheckoutLevel(System.String)">
+            <summary>
+            Sets the specified value to CheckoutLevel.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Merchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Merchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.Equals(Com.MasterCard.Merchant.Onboarding.Model.Merchant)">
+            <summary>
+            Returns true if Merchant instances are equal
+            </summary>
+            <param name="other">Instance of Merchant to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Merchant.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Merchant.SPMerchantId">
+            <summary>
+            Gets or Sets the Service Provider Issued merchant ID. This should be unique per Service Provider. For example, 123456789
+            </summary>  
+            <value>A value containing the Service Provider Issued merchant ID. This should be unique per Service Provider. For example, 123456789</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Merchant.Action">
+            <summary>
+            Gets or Sets the merchant action. Valid values are C(Create), U(Update) and D(Delete).
+            </summary>  
+            <value>A value containing the merchant action. Valid values are C(Create), U(Update) and D(Delete).</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Merchant.Profile">
+            <summary>
+            Gets or Sets the merchant Profile. Mandatory for Create(Action=C) and Update(Action=U).
+            </summary>  
+            <value>A value containing the merchant Profile. Mandatory for Create(Action=C) and Update(Action=U).</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Merchant.RewardProgram">
+            <summary>
+            Gets or Sets the reward program information.
+            </summary>  
+            <value>A value containing the reward program information.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Merchant.CheckoutBrand">
+            <summary>
+            Gets or Sets CheckoutBrand
+            </summary>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Merchant.AuthOption">
+            <summary>
+            Gets or Sets the authentication options.
+            </summary>  
+            <value>A collection containing the authentication options.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Merchant.MerchantAcquirer">
+            <summary>
+            Gets or Sets the merchant acquirer.
+            </summary>  
+            <value>A collection containing the merchant acquirer.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Merchant.CheckoutLevel">
+            <summary>
+            Gets or Sets the checkout level.
+            </summary>  
+            <value>A value containing the checkout level.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Merchant.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer">
+            <summary>
+            This class contains the merchant&#39;s acquirer details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.WithAction(System.String)">
+            <summary>
+            Sets the specified value to Action.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantAcquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.WithAcquirer(Com.MasterCard.Merchant.Onboarding.Model.Acquirer)">
+            <summary>
+            Sets the specified value to Acquirer.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantAcquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.WithMerchantAcquirerBrand(Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand)">
+            <summary>
+            Sets the specified value to MerchantAcquirerBrand.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantAcquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantAcquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.WithID(System.String)">
+            <summary>
+            Sets the specified value to ID.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantAcquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.WithName(System.String)">
+            <summary>
+            Sets the specified value to Name.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantAcquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.WithAssignedMerchantID(System.String)">
+            <summary>
+            Sets the specified value to AssignedMerchantID.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantAcquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.WithDSStatus(System.String)">
+            <summary>
+            Sets the specified value to DSStatus.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantAcquirer instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.Equals(Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer)">
+            <summary>
+            Returns true if MerchantAcquirer instances are equal
+            </summary>
+            <param name="other">Instance of MerchantAcquirer to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.Action">
+            <summary>
+            Gets or Sets the Create, Update, Delete action. Used to create (C), update (U) or delete (D) Visa Password.
+            </summary>  
+            <value>A value containing the Create, Update, Delete action. Used to create (C), update (U) or delete (D) Visa Password.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.Acquirer">
+            <summary>
+            Gets or Sets the merchant's acquirer details.
+            </summary>  
+            <value>A value containing the merchant's acquirer details.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.MerchantAcquirerBrand">
+            <summary>
+            Gets or Sets the merchant acquirer brand.
+            </summary>  
+            <value>A value containing the merchant acquirer brand.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.ID">
+            <summary>
+            Gets or Sets the acquirer id. Used while merchant upload response.
+            </summary>  
+            <value>A value containing the acquirer id. Used while merchant upload response.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.Name">
+            <summary>
+            Gets or Sets the merchant's acquirer name. Used while merchant upload response.
+            </summary>  
+            <value>A value containing the merchant's acquirer name. Used while merchant upload response.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.AssignedMerchantID">
+            <summary>
+            Gets or Sets the assigned merchant id. Used while merchant upload response.
+            </summary>  
+            <value>A value containing the assigned merchant id. Used while merchant upload response.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer.DSStatus">
+            <summary>
+            Gets or Sets the assigned merchant id. Used while merchant upload response.
+            </summary>  
+            <value>A value containing the assigned merchant id. Used while merchant upload response.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand">
+            <summary>
+            This class contains the merchant&#39;s acquirer brand details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.WithCardBrand(System.String)">
+            <summary>
+            Sets the specified value to CardBrand.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantAcquirerBrand instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.WithCurrency(System.String)">
+            <summary>
+            Adds the specified value to Currency collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantAcquirerBrand instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantAcquirerBrand instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.Equals(Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand)">
+            <summary>
+            Returns true if MerchantAcquirerBrand instances are equal
+            </summary>
+            <param name="other">Instance of MerchantAcquirerBrand to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.CardBrand">
+            <summary>
+            Gets or Sets the merchant's acquirer card brand. For example, for Mastercard, use MASTER.
+            </summary>  
+            <value>A value containing the merchant's acquirer card brand. For example, for Mastercard, use MASTER.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.Currency">
+            <summary>
+            Gets or Sets the currency code. ISO 4217 standard 3-letter currency code. If this field is left blank, then all currency codes will be enabled.
+            </summary>  
+            <value>A collection containing the currency code. ISO 4217 standard 3-letter currency code. If this field is left blank, then all currency codes will be enabled.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirerBrand.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload">
+            <summary>
+            This class contains the merchant upload response details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.WithSummary(Com.MasterCard.Merchant.Onboarding.Model.Summary)">
+            <summary>
+            Sets the specified value to Summary.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantDownload instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.WithMerchantResponseRecord(Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord)">
+            <summary>
+            Adds the specified value to MerchantResponseRecord collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantDownload instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantDownload instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.WithVersion(System.String)">
+            <summary>
+            Sets the specified value to Version.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantDownload instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.Equals(Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload)">
+            <summary>
+            Returns true if MerchantDownload instances are equal
+            </summary>
+            <param name="other">Instance of MerchantDownload to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.Summary">
+            <summary>
+            Gets or Sets the summary of the upload request.
+            </summary>  
+            <value>A value containing the summary of the upload request.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.MerchantResponseRecord">
+            <summary>
+            Gets or Sets the list of merchants uploaded/edited.
+            </summary>  
+            <value>A collection containing the list of merchants uploaded/edited.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantDownload.Version">
+            <summary>
+            Gets or Sets the version information.
+            </summary>  
+            <value>A value containing the version information.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord">
+            <summary>
+            This class contains the merchant response record.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.WithSPMerchantId(System.String)">
+            <summary>
+            Sets the specified value to SPMerchantId.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantResponseRecord instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.WithErrorText(System.String)">
+            <summary>
+            Sets the specified value to ErrorText.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantResponseRecord instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.WithCheckoutBrand(Com.MasterCard.Merchant.Onboarding.Model.CheckoutBrand)">
+            <summary>
+            Adds the specified value to CheckoutBrand collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantResponseRecord instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.WithMerchantAcquirer(Com.MasterCard.Merchant.Onboarding.Model.MerchantAcquirer)">
+            <summary>
+            Adds the specified value to MerchantAcquirer collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantResponseRecord instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantResponseRecord instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.Equals(Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord)">
+            <summary>
+            Returns true if MerchantResponseRecord instances are equal
+            </summary>
+            <param name="other">Instance of MerchantResponseRecord to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.SPMerchantId">
+            <summary>
+            Gets or Sets the merchant identifier for a specific service provider. For example, 12345.
+            </summary>  
+            <value>A value containing the merchant identifier for a specific service provider. For example, 12345.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.ErrorText">
+            <summary>
+            Gets or Sets the error description for failure. For example, Invalid rewards logo URL.
+            </summary>  
+            <value>A value containing the error description for failure. For example, Invalid rewards logo URL.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.CheckoutBrand">
+            <summary>
+            Gets or Sets the checkout branding. Choice (ErrorText or CheckoutBrand).
+            </summary>  
+            <value>A collection containing the checkout branding. Choice (ErrorText or CheckoutBrand).</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.MerchantAcquirer">
+            <summary>
+            Gets or Sets the merchant acquirer information.
+            </summary>  
+            <value>A collection containing the merchant acquirer information.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantResponseRecord.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload">
+            <summary>
+            This class contains various methods for to set different merchant upload parameters required for Single-Merchant Upload Service.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload.WithMerchant(Com.MasterCard.Merchant.Onboarding.Model.Merchant)">
+            <summary>
+            Sets the specified value to Merchant.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantUpload instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The MerchantUpload instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload.Equals(Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload)">
+            <summary>
+            Returns true if MerchantUpload instances are equal
+            </summary>
+            <param name="other">Instance of MerchantUpload to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload.Merchant">
+            <summary>
+            Gets or Sets the merchant details
+            </summary>  
+            <value>A value containing the merchant details</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.MerchantUpload.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.Phone">
+            <summary>
+            This class contains merchant&#39;s phone details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Phone.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.Phone"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Phone.WithCountryCode(System.String)">
+            <summary>
+            Sets the specified value to CountryCode.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Phone instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Phone.WithNumber(System.String)">
+            <summary>
+            Sets the specified value to Number.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Phone instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Phone.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Phone instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Phone.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Phone.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Phone.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Phone.Equals(Com.MasterCard.Merchant.Onboarding.Model.Phone)">
+            <summary>
+            Returns true if Phone instances are equal
+            </summary>
+            <param name="other">Instance of Phone to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Phone.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Phone.CountryCode">
+            <summary>
+            Gets or Sets the merchant's phone country code. For example, 75.
+            </summary>  
+            <value>A value containing the merchant's phone country code. For example, 75.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Phone.Number">
+            <summary>
+            Gets or Sets the merchant's phone number. For example, 9785453432.
+            </summary>  
+            <value>A value containing the merchant's phone number. For example, 9785453432.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Phone.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.Profile">
+            <summary>
+            This class contains various merchant profile details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.Profile"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.WithName(System.String)">
+            <summary>
+            Sets the specified value to Name.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Profile instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.WithDoingBusAs(System.String)">
+            <summary>
+            Sets the specified value to DoingBusAs.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Profile instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.WithFedTaxId(System.String)">
+            <summary>
+            Sets the specified value to FedTaxId.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Profile instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.WithUrl(System.String)">
+            <summary>
+            Sets the specified value to Url.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Profile instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.WithBusinessCategory(System.String)">
+            <summary>
+            Sets the specified value to BusinessCategory.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Profile instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.WithAddress(Com.MasterCard.Merchant.Onboarding.Model.Address)">
+            <summary>
+            Sets the specified value to Address.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Profile instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.WithPhone(Com.MasterCard.Merchant.Onboarding.Model.Phone)">
+            <summary>
+            Sets the specified value to Phone.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Profile instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.WithEmails(Com.MasterCard.Merchant.Onboarding.Model.Emails)">
+            <summary>
+            Sets the specified value to Emails.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Profile instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.WithAcquirer(Com.MasterCard.Merchant.Onboarding.Model.Acquirer)">
+            <summary>
+            Sets the specified value to Acquirer.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Profile instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Profile instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.Equals(Com.MasterCard.Merchant.Onboarding.Model.Profile)">
+            <summary>
+            Returns true if Profile instances are equal
+            </summary>
+            <param name="other">Instance of Profile to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Profile.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Profile.Name">
+            <summary>
+            Gets or Sets the merchant name. For example, XYZ Pizza
+            </summary>  
+            <value>A value containing the merchant name. For example, XYZ Pizza</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Profile.DoingBusAs">
+            <summary>
+            Gets or Sets the alias - Doing Business As. For example, XYZ Pizza Inc.
+            </summary>  
+            <value>A value containing the alias - Doing Business As. For example, XYZ Pizza Inc.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Profile.FedTaxId">
+            <summary>
+            Gets or Sets the merchant’s Federal Tax ID. For example, 999990001.
+            </summary>  
+            <value>A value containing the merchant’s Federal Tax ID. For example, 999990001.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Profile.Url">
+            <summary>
+            Gets or Sets the merchant’s website URL. For example, www.xyzpizza.com.
+            </summary>  
+            <value>A value containing the merchant’s website URL. For example, www.xyzpizza.com.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Profile.BusinessCategory">
+            <summary>
+            Gets or Sets the merchant’s business type. For example, Restaurant.
+            </summary>  
+            <value>A value containing the merchant’s business type. For example, Restaurant.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Profile.Address">
+            <summary>
+            Gets or Sets the merchant's address.
+            </summary>  
+            <value>A value containing the merchant's address.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Profile.Phone">
+            <summary>
+            Gets or Sets the merchant's phone.
+            </summary>  
+            <value>A value containing the merchant's phone.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Profile.Emails">
+            <summary>
+            Gets or Sets the merchant's email addresses.
+            </summary>  
+            <value>A value containing the merchant's email addresses.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Profile.Acquirer">
+            <summary>
+            Gets or Sets the merchant's acquirer.
+            </summary>  
+            <value>A value containing the merchant's acquirer.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Profile.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType">
+            <summary>
+            This class contains the project key type.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType.WithSandboxKey(System.String)">
+            <summary>
+            Sets the specified value to SandboxKey.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The ProjectKeyType instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType.WithProductionKey(System.String)">
+            <summary>
+            Sets the specified value to ProductionKey.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The ProjectKeyType instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType.Equals(Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType)">
+            <summary>
+            Returns true if ProjectKeyType instances are equal
+            </summary>
+            <param name="other">Instance of ProjectKeyType to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType.SandboxKey">
+            <summary>
+            Gets or Sets the developer’s sandbox API key. For example, 245d5a537a457c2f2b55644b704142694449644b56673d9d
+            </summary>  
+            <value>A value containing the developer’s sandbox API key. For example, 245d5a537a457c2f2b55644b704142694449644b56673d9d</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType.ProductionKey">
+            <summary>
+            Gets or Sets the developer’s production API key. For example, 245d5a537a457c2f2b55644b704142694449644b56673d9d
+            </summary>  
+            <value>A value containing the developer’s production API key. For example, 245d5a537a457c2f2b55644b704142694449644b56673d9d</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram">
+            <summary>
+            This class contains the reward program details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.WithName(System.String)">
+            <summary>
+            Sets the specified value to Name.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The RewardProgram instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.WithId(System.String)">
+            <summary>
+            Sets the specified value to Id.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The RewardProgram instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.WithLogoUrl(System.String)">
+            <summary>
+            Sets the specified value to LogoUrl.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The RewardProgram instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The RewardProgram instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.Equals(Com.MasterCard.Merchant.Onboarding.Model.RewardProgram)">
+            <summary>
+            Returns true if RewardProgram instances are equal
+            </summary>
+            <param name="other">Instance of RewardProgram to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.Name">
+            <summary>
+            Gets or Sets the reward program name.
+            </summary>  
+            <value>A value containing the reward program name.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.Id">
+            <summary>
+            Gets or Sets the reward id.
+            </summary>  
+            <value>A value containing the reward id.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.LogoUrl">
+            <summary>
+            Gets or Sets the logo url.
+            </summary>  
+            <value>A value containing the logo url.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.RewardProgram.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.Summary">
+            <summary>
+            This class contains the merchant upload summary.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.Summary"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.WithBatchId(System.Nullable{System.Int64})">
+            <summary>
+            Sets the specified value to BatchId.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Summary instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.WithDescription(System.String)">
+            <summary>
+            Sets the specified value to Description.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Summary instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.WithUploadTimestamp(System.String)">
+            <summary>
+            Sets the specified value to UploadTimestamp.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Summary instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.WithUploadFileName(System.String)">
+            <summary>
+            Sets the specified value to UploadFileName.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Summary instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.WithSuccessCount(System.Nullable{System.Int32})">
+            <summary>
+            Sets the specified value to SuccessCount.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Summary instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.WithFailureCount(System.Nullable{System.Int32})">
+            <summary>
+            Sets the specified value to FailureCount.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Summary instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.WithErrorText(System.String)">
+            <summary>
+            Sets the specified value to ErrorText.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Summary instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.WithProjectKeys(Com.MasterCard.Merchant.Onboarding.Model.ProjectKeyType)">
+            <summary>
+            Sets the specified value to ProjectKeys.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Summary instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The Summary instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.Equals(Com.MasterCard.Merchant.Onboarding.Model.Summary)">
+            <summary>
+            Returns true if Summary instances are equal
+            </summary>
+            <param name="other">Instance of Summary to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.Summary.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Summary.BatchId">
+            <summary>
+            Gets or Sets the system assigned batch Id. For example, 277800
+            </summary>  
+            <value>A value containing the system assigned batch Id. For example, 277800</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Summary.Description">
+            <summary>
+            Gets or Sets the description provided during file upload. For example, Merchant file upload.
+            </summary>  
+            <value>A value containing the description provided during file upload. For example, Merchant file upload.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Summary.UploadTimestamp">
+            <summary>
+            Gets or Sets the upload time stamp. For example, 2013-05-18T11:45:19.444-05:00
+            </summary>  
+            <value>A value containing the upload time stamp. For example, 2013-05-18T11:45:19.444-05:00</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Summary.UploadFileName">
+            <summary>
+            Gets or Sets the upload file name. For example, merchant.xml
+            </summary>  
+            <value>A value containing the upload file name. For example, merchant.xml</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Summary.SuccessCount">
+            <summary>
+            Gets or Sets the number of successfully uploaded merchant brandings.
+            </summary>  
+            <value>A value containing the number of successfully uploaded merchant brandings.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Summary.FailureCount">
+            <summary>
+            Gets or Sets the number of unsuccessfully uploaded merchant brandings.
+            </summary>  
+            <value>A value containing the number of unsuccessfully uploaded merchant brandings.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Summary.ErrorText">
+            <summary>
+            Gets or Sets the description of errors resulting upload failures. For example, Invalid Format.
+            </summary>  
+            <value>A value containing the description of errors resulting upload failures. For example, Invalid Format.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Summary.ProjectKeys">
+            <summary>
+            Gets or Sets the developer environment keys.
+            </summary>  
+            <value>A value containing the developer environment keys.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.Summary.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant">
+            <summary>
+            This class contains the validated merchant details.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.WithMerchantId(System.String)">
+            <summary>
+            Sets the specified value to MerchantId.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The ValidatedMerchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.WithErrorText(System.String)">
+            <summary>
+            Adds the specified value to ErrorText collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The ValidatedMerchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.WithExtensionPoint(Com.MasterCard.Merchant.Onboarding.Model.ExtensionPoint)">
+            <summary>
+            Sets the specified value to ExtensionPoint.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The ValidatedMerchant instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.Equals(Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant)">
+            <summary>
+            Returns true if ValidatedMerchant instances are equal
+            </summary>
+            <param name="other">Instance of ValidatedMerchant to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.MerchantId">
+            <summary>
+            Gets or Sets the identifier of the merchant defined by the Service Provider.
+            </summary>  
+            <value>A value containing the identifier of the merchant defined by the Service Provider.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.ErrorText">
+            <summary>
+            Gets or Sets the description of validation error.
+            </summary>  
+            <value>A collection containing the description of validation error.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant.ExtensionPoint">
+            <summary>
+            Gets or Sets the extension point for future enhancement.
+            </summary>  
+            <value>A value containing the extension point for future enhancement.</value>
+        </member>
+        <member name="T:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse">
+            <summary>
+            This class contains the 3DS and/or non-3DS merchant status records.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse.WithValidatedMerchant(Com.MasterCard.Merchant.Onboarding.Model.ValidatedMerchant)">
+            <summary>
+            Adds the specified value to ValidatedMerchant collection.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The ValidateFileResponse instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse.WithErrorText(System.String)">
+            <summary>
+            Sets the specified value to ErrorText.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The ValidateFileResponse instance.</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse.Equals(Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse)">
+            <summary>
+            Returns true if ValidateFileResponse instances are equal
+            </summary>
+            <param name="other">Instance of ValidateFileResponse to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse.ValidatedMerchant">
+            <summary>
+            Gets or Sets the validation details of a merchant.
+            </summary>  
+            <value>A collection containing the validation details of a merchant.</value>
+        </member>
+        <member name="P:Com.MasterCard.Merchant.Onboarding.Model.ValidateFileResponse.ErrorText">
+            <summary>
+            Gets or Sets the description of validation error.
+            </summary>  
+            <value>A value containing the description of validation error.</value>
+        </member>
+    </members>
+</doc>

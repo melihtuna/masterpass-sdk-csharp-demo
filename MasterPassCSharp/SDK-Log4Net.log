@@ -1,0 +1,120 @@
+2017-01-25 10:35:05,452 INFO [Com.MasterCard.Sdk.Core.MasterCardSignatureBuilder]: Authorization header added in the request.
+2017-01-25 10:35:05,461 INFO [Com.MasterCard.Sdk.Core.RequestResponseLogger]: POST - https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+2017-01-25 10:35:05,461 DEBUG[Com.MasterCard.Sdk.Core.RequestResponseLogger]: Request Information
+POST - https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Accept: application/x-www-form-urlencoded; charset=utf-8
+realm: eWallet
+Authorization: OAuth oauth_callback="http%3A%2F%2Flocalhost%2FO3_Callback%3Fwalletid%3D1",oauth_consumer_key="cLb0tKkEJhGTITp_6ltDIibO5Wgbx4rIldeXM_jRd4b0476c%21414f4859446c4a366c726a327474695545332b353049303d",oauth_nonce="F0phuXQA",oauth_signature="OSrF7qTPZGvr008wf%2B%2B65EPFnuDGSAwjTEJiOv5hwB4CA9ARyu0nUO%2FhjXZbh6CpyH4FBJhzrs1SyiLq9kCxj9ERD4ukCLdeZ%2BUWUsDiW09mhCg2sqRZL5ddwY%2BzyAzm637P4L%2FcqwIasdAiKmzUkeZdQX0eNTuFGSk9j3MjRj0%3D",oauth_signature_method="RSA-SHA1",oauth_timestamp="1485320705",oauth_version="1.0",realm="eWallet"
+API-Call-Tracker: base_sdk_version=1.1.3,lang_name=C#,lang_version=4.0.30319.42000
+User-Agent: MC Open API OAuth Framework v1.0-C#
+
+2017-01-25 10:35:07,072 INFO [Com.MasterCard.Sdk.Core.RequestResponseLogger]: Response: Completed - 200 - OK
+2017-01-25 10:35:07,074 DEBUG[Com.MasterCard.Sdk.Core.RequestResponseLogger]: Response Information
+Response: Completed - 200 - OK
+Uri:  - https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content: application/x-www-form-urlencoded -  - 247
+Keep-Alive: timeout=15, max=100
+Connection: Keep-Alive
+Content-Length: 247
+Content-Type: application/x-www-form-urlencoded
+Date: Wed, 25 Jan 2017 05:05:06 GMT
+Set-Cookie: APIGW_51_cluster_JSESSIONID=poF3twjN+sL5akb9-wP07g__; Path=/mosp; Secure,TS01b346c2=01772feb4b4dc18e4fcb39dca9a92e5886887bbd2793d4a523420f69437fd0f1749c81bfe6; Path=/,TS01eb8160=01772feb4b3d1dbdc780defe2808de54f34bc72dbc8416927f8821287fb30fce649e8f55d9160def21a071e3816d80991262ffa7d4; path=/mosp
+X-Powered-By: Servlet 2.5; JBoss-5.0/JBossWeb-2.1
+TS01b346c2: 01772feb4b4dc18e4fcb39dca9a92e5886887bbd2793d4a523420f69437fd0f1749c81bfe6
+oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=e4452132cddbac5ac6be88b29db2a57ecdfe9244&oauth_token_secret=4852927ca20fd87246ab3bc590f1cae7d9a79417&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+
+2017-01-25 10:35:07,094 INFO [Com.MasterCard.Sdk.Core.MasterCardSignatureBuilder]: Authorization header added in the request.
+2017-01-25 10:35:07,095 INFO [Com.MasterCard.Sdk.Core.RequestResponseLogger]: POST - https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+2017-01-25 10:35:07,095 DEBUG[Com.MasterCard.Sdk.Core.RequestResponseLogger]: Request Information
+POST - https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Accept: application/x-www-form-urlencoded; charset=utf-8
+realm: eWallet
+Authorization: OAuth oauth_callback="http%3A%2F%2Flocalhost%2FO3_Callback%3Fwalletid%3D1",oauth_consumer_key="cLb0tKkEJhGTITp_6ltDIibO5Wgbx4rIldeXM_jRd4b0476c%21414f4859446c4a366c726a327474695545332b353049303d",oauth_nonce="bRJDD5kp",oauth_signature="GciJx%2FK5GjEMzBA24VbA6m3%2BzRwDbQsrKbJFIizfokY6B%2FbyPnoF6SeB8%2FtlE%2BdoCBZyN2bxQGwRaR55XUrqVVtLUEwtoxoG7O%2BgaGXKQe0yGI9ZpDNGXaJq%2FpX6rEDMSKpUFeldNLuXWL7WIr1O3FfXMlc%2BLUDpGlgI98Y2wZ0%3D",oauth_signature_method="RSA-SHA1",oauth_timestamp="1485320707",oauth_version="1.0",realm="eWallet"
+API-Call-Tracker: base_sdk_version=1.1.3,lang_name=C#,lang_version=4.0.30319.42000
+User-Agent: MC Open API OAuth Framework v1.0-C#
+
+2017-01-25 10:35:07,475 INFO [Com.MasterCard.Sdk.Core.RequestResponseLogger]: Response: Completed - 200 - OK
+2017-01-25 10:35:07,477 DEBUG[Com.MasterCard.Sdk.Core.RequestResponseLogger]: Response Information
+Response: Completed - 200 - OK
+Uri:  - https://sandbox.api.mastercard.com/oauth/consumer/v1/request_token
+Content: application/x-www-form-urlencoded -  - 247
+Content-Length: 247
+Content-Type: application/x-www-form-urlencoded
+Date: Wed, 25 Jan 2017 05:05:07 GMT
+Set-Cookie: APIGW_51_cluster_JSESSIONID=Gf9EfnxjCnd+qxqxJVNX6w__; Path=/mosp; Secure,TS01b346c2=01772feb4ba850fa4461dac41d8b797420390d5eac9ec20841f9bda76b7bf2bd99a34c148e; Path=/,TS01eb8160=01772feb4bcbdf56bb7c20ab4b958169e64ea234d7921a047201ffe6e78ee11d98a7faf6a56ee5b5857fbf7de5c157a4f2bb43895e; path=/mosp
+X-Powered-By: Servlet 2.5; JBoss-5.0/JBossWeb-2.1
+TS01b346c2: 01772feb4ba850fa4461dac41d8b797420390d5eac9ec20841f9bda76b7bf2bd99a34c148e
+oauth_callback_confirmed=true&oauth_expires_in=900&oauth_token=38fc64f279797a7bbda62ac871caf81701728242&oauth_token_secret=088665b8d770586b8c0216b4f32aafe0c8ca045f&xoauth_request_auth_url=https%3A%2F%2Fsandbox.masterpass.com%2FCheckout%2FAuthorize
+
+2017-01-25 10:35:21,590 INFO [Com.MasterCard.Sdk.Core.MasterCardSignatureBuilder]: Authorization header added in the request.
+2017-01-25 10:35:21,591 INFO [Com.MasterCard.Sdk.Core.RequestResponseLogger]: POST - https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+2017-01-25 10:35:21,592 DEBUG[Com.MasterCard.Sdk.Core.RequestResponseLogger]: Request Information
+POST - https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Accept: application/xml; charset=utf-8
+Authorization: OAuth oauth_body_hash="92xvRHbakBCKM15rivHXI4J5NGQ%3D",oauth_consumer_key="cLb0tKkEJhGTITp_6ltDIibO5Wgbx4rIldeXM_jRd4b0476c%21414f4859446c4a366c726a327474695545332b353049303d",oauth_nonce="Pqpm4mBm",oauth_signature="CrPWwmoZiQ913fgnZzoOvgrXJxQi4Sqv4xcMyZkxsEtfTKTnx2aHXYIAvVQc7mVIn%2B2nfsM9mQePaEXRQR4XJmvmAxuqXTIR%2Fk0IadGcavmZI6YEOJHrRF2nAHTuv5SlzltgrfkbIUGsdq8X6VQlAlIEhjzkfKSspFj8bIOIibM%3D",oauth_signature_method="RSA-SHA1",oauth_timestamp="1485320721",oauth_version="1.0",realm="eWallet"
+API-Call-Tracker: base_sdk_version=1.1.3,client_sdk_version=1.0.0,lang_name=C#,lang_version=4.0.30319.42000
+User-Agent: MC Open API OAuth Framework v1.0-C#
+<ShoppingCartRequest>
+  <OAuthToken>e4452132cddbac5ac6be88b29db2a57ecdfe9244</OAuthToken>
+  <ShoppingCart>
+    <CurrencyCode>USD</CurrencyCode>
+    <Subtotal>11900</Subtotal>
+    <ShoppingCartItem>
+      <Description>This is one item</Description>
+      <Quantity>1</Quantity>
+      <Value>1900</Value>
+    </ShoppingCartItem>
+    <ShoppingCartItem>
+      <Description>Five items</Description>
+      <Quantity>5</Quantity>
+      <Value>10000</Value>
+      <ImageURL>https://somemerchant.com/someimage</ImageURL>
+    </ShoppingCartItem>
+  </ShoppingCart>
+</ShoppingCartRequest>
+
+2017-01-25 10:35:22,758 INFO [Com.MasterCard.Sdk.Core.RequestResponseLogger]: Response: Completed - 200 - OK
+2017-01-25 10:35:22,760 DEBUG[Com.MasterCard.Sdk.Core.RequestResponseLogger]: Response Information
+Response: Completed - 200 - OK
+Uri:  - https://sandbox.api.mastercard.com/masterpass/v6/shopping-cart
+Content: application/xml -  - 165
+Content-Length: 165
+Content-Type: application/xml
+Date: Wed, 25 Jan 2017 05:05:21 GMT
+Set-Cookie: MasterPassServices_sandbox_cluster_JSESSIONID=91D94B13AEBC9553D3F858248C87AB6E; Path=/online; Secure,TS01b346c2=01772feb4b7d213e5a75eb3824ea8e7187fef692ee0da32dcb32522ba960f890c3d9b8885c; Path=/,TS017ba234=01772feb4b37fa5f18faf06e3e1153584cbbaf4150a011e247a872b27deffd58688d9a295977225ba5fbb62556eeba26315fd68d68; path=/online
+X-Powered-By: Servlet 2.5; JBoss-5.0/JBossWeb-2.1
+TS01b346c2: 01772feb4b7d213e5a75eb3824ea8e7187fef692ee0da32dcb32522ba960f890c3d9b8885c
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ShoppingCartResponse>
+  <OAuthToken>e4452132cddbac5ac6be88b29db2a57ecdfe9244</OAuthToken>
+</ShoppingCartResponse>
+
+2017-01-25 10:35:22,870 INFO [Com.MasterCard.Sdk.Core.MasterCardSignatureBuilder]: Authorization header added in the request.
+2017-01-25 10:35:22,870 INFO [Com.MasterCard.Sdk.Core.RequestResponseLogger]: POST - https://sandbox.api.mastercard.com/masterpass/v6/merchant-initialization
+2017-01-25 10:35:22,871 DEBUG[Com.MasterCard.Sdk.Core.RequestResponseLogger]: Request Information
+POST - https://sandbox.api.mastercard.com/masterpass/v6/merchant-initialization
+Accept: application/xml; charset=utf-8
+Authorization: OAuth oauth_body_hash="%2FwVOuWR7HICzlWao1yZ6hfM5qJs%3D",oauth_consumer_key="cLb0tKkEJhGTITp_6ltDIibO5Wgbx4rIldeXM_jRd4b0476c%21414f4859446c4a366c726a327474695545332b353049303d",oauth_nonce="DXvQTOW0",oauth_signature="c67jweQp1Z1%2BZqj6Jr%2BTv%2FoSVhEgCzA4%2BKE5DbwXops3OglOwM8RNW%2BzUdMexeDBicRRPCHQiL9AyudU1%2BVmYOhXd8EA01rnPox1Aa9xlgd4TuIRbzC29OEthMo9sxeMV8PYgGmdnSobtKWuepdIMG4f31X1wrhGNOtKIGHWA0E%3D",oauth_signature_method="RSA-SHA1",oauth_timestamp="1485320722",oauth_version="1.0",realm="eWallet"
+API-Call-Tracker: base_sdk_version=1.1.3,client_sdk_version=1.0.0,lang_name=C#,lang_version=4.0.30319.42000
+User-Agent: MC Open API OAuth Framework v1.0-C#
+<MerchantInitializationRequest>
+  <OAuthToken>e4452132cddbac5ac6be88b29db2a57ecdfe9244</OAuthToken>
+  <OriginUrl>http://localhost</OriginUrl>
+</MerchantInitializationRequest>
+
+2017-01-25 10:35:23,812 INFO [Com.MasterCard.Sdk.Core.RequestResponseLogger]: Response: Completed - 200 - OK
+2017-01-25 10:35:23,813 DEBUG[Com.MasterCard.Sdk.Core.RequestResponseLogger]: Response Information
+Response: Completed - 200 - OK
+Uri:  - https://sandbox.api.mastercard.com/masterpass/v6/merchant-initialization
+Content: application/xml -  - 185
+Content-Length: 185
+Content-Type: application/xml
+Date: Wed, 25 Jan 2017 05:05:22 GMT
+Set-Cookie: MasterPassServices_sandbox_cluster_JSESSIONID=E4EE6D725D1BCC4DAB3CF3E39E271F68; Path=/online; Secure,TS01b346c2=01772feb4b344c7b1d2bdcd1d7d207e601655cbce65c875732e1b940b2c5d113605d5f68cb; Path=/,TS017ba234=01772feb4b6bb8db0dcd0c51bca2dfe238311e6a7e3fad98b56c980117f695c84e01eda5cdc296bf37044b3d2907eabc0e1eb3dc39; path=/online
+X-Powered-By: Servlet 2.5; JBoss-5.0/JBossWeb-2.1
+TS01b346c2: 01772feb4b344c7b1d2bdcd1d7d207e601655cbce65c875732e1b940b2c5d113605d5f68cb
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MerchantInitializationResponse>
+  <OAuthToken>e4452132cddbac5ac6be88b29db2a57ecdfe9244</OAuthToken>
+</MerchantInitializationResponse>
+

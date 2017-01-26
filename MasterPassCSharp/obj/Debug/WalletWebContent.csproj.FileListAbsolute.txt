@@ -1,0 +1,162 @@
+C:\projects\MasterPassCSharp\MasterPassCSharp\bin\EntityFramework.dll
+C:\projects\MasterPassCSharp\MasterPassCSharp\bin\EntityFramework.xml
+C:\projects\MasterPassCSharp\MasterPassCSharp\bin\common.dll
+C:\projects\MasterPassCSharp\MasterPassCSharp\bin\WalletSDK.dll
+C:\projects\MasterPassCSharp\MasterPassCSharp\bin\common.pdb
+C:\projects\MasterPassCSharp\MasterPassCSharp\bin\WalletSDK.pdb
+C:\projects\MasterPassCSharp\MasterPassCSharp\bin\MasterCard.WalletWebContent.dll
+C:\projects\MasterPassCSharp\MasterPassCSharp\bin\MasterCard.WalletWebContent.pdb
+C:\projects\MasterPassCSharp\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.dll
+C:\projects\MasterPassCSharp\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.pdb
+C:\projects\MasterPassCSharp\MasterPassCSharp\obj\Debug\WalletWebContent.csprojResolveAssemblyReference.cache
+C:\Users\e049407\workspace-masterpass\masterpass-sdk-csharp\tags\standard-release\MasterPassCSharp\bin\MasterCard.WalletWebContent.dll
+C:\Users\e049407\workspace-masterpass\masterpass-sdk-csharp\tags\standard-release\MasterPassCSharp\bin\MasterCard.WalletWebContent.pdb
+C:\Users\e049407\workspace-masterpass\masterpass-sdk-csharp\tags\standard-release\MasterPassCSharp\bin\common.dll
+C:\Users\e049407\workspace-masterpass\masterpass-sdk-csharp\tags\standard-release\MasterPassCSharp\bin\EntityFramework.dll
+C:\Users\e049407\workspace-masterpass\masterpass-sdk-csharp\tags\standard-release\MasterPassCSharp\bin\WalletSDK.dll
+C:\Users\e049407\workspace-masterpass\masterpass-sdk-csharp\tags\standard-release\MasterPassCSharp\bin\common.pdb
+C:\Users\e049407\workspace-masterpass\masterpass-sdk-csharp\tags\standard-release\MasterPassCSharp\bin\WalletSDK.pdb
+C:\Users\e049407\workspace-masterpass\masterpass-sdk-csharp\tags\standard-release\MasterPassCSharp\bin\EntityFramework.xml
+C:\Users\e049407\workspace-masterpass\masterpass-sdk-csharp\tags\standard-release\MasterPassCSharp\obj\Debug\WalletWebContent.csprojResolveAssemblyReference.cache
+C:\Users\e049407\workspace-masterpass\masterpass-sdk-csharp\tags\standard-release\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.dll
+C:\Users\e049407\workspace-masterpass\masterpass-sdk-csharp\tags\standard-release\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.pdb
+H:\standard-release\MasterPassCSharp\bin\MasterCard.WalletWebContent.dll
+H:\standard-release\MasterPassCSharp\bin\MasterCard.WalletWebContent.pdb
+H:\standard-release\MasterPassCSharp\bin\common.dll
+H:\standard-release\MasterPassCSharp\bin\EntityFramework.dll
+H:\standard-release\MasterPassCSharp\bin\WalletSDK.dll
+H:\standard-release\MasterPassCSharp\bin\common.pdb
+H:\standard-release\MasterPassCSharp\bin\WalletSDK.pdb
+H:\standard-release\MasterPassCSharp\bin\EntityFramework.xml
+H:\standard-release\MasterPassCSharp\obj\Debug\WalletWebContent.csprojResolveAssemblyReference.cache
+H:\standard-release\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.dll
+H:\standard-release\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.pdb
+C:\MasterCard\OpenAPISDK\CSharp\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\MasterCard.WalletWebContent.dll
+C:\MasterCard\OpenAPISDK\CSharp\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\MasterCard.WalletWebContent.pdb
+C:\MasterCard\OpenAPISDK\CSharp\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\common.dll
+C:\MasterCard\OpenAPISDK\CSharp\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\WalletSDK.dll
+C:\MasterCard\OpenAPISDK\CSharp\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\common.pdb
+C:\MasterCard\OpenAPISDK\CSharp\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\WalletSDK.pdb
+C:\MasterCard\OpenAPISDK\CSharp\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\WalletWebContent.csprojResolveAssemblyReference.cache
+C:\MasterCard\OpenAPISDK\CSharp\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.dll
+C:\MasterCard\OpenAPISDK\CSharp\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.pdb
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Web.config
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Web.Debug.config
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Web.Release.config
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\log4net.config
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\MasterCard.WalletWebContent.dll.config
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\MasterCard.WalletWebContent.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\MasterCard.WalletWebContent.pdb
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Masterpass.Merchant.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Merchant.Onboarding.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Sdk.Core.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\EntityFramework.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\log4net.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Microsoft.Web.Infrastructure.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Newtonsoft.Json.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\RestSharp.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\slf4net.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\slf4net.log4net.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Helpers.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Mvc.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Razor.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Deployment.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Razor.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Masterpass.Merchant.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Merchant.Onboarding.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Sdk.Core.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\EntityFramework.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\log4net.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Newtonsoft.Json.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\RestSharp.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\slf4net.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Helpers.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Mvc.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Razor.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Deployment.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Razor.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\WalletWebContent.csprojResolveAssemblyReference.cache
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.pdb
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Web.config
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Web.Debug.config
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Web.Release.config
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\log4net.config
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\MasterCard.WalletWebContent.dll.config
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\MasterCard.WalletWebContent.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\MasterCard.WalletWebContent.pdb
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Masterpass.Merchant.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Merchant.Onboarding.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Sdk.Core.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\EntityFramework.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\log4net.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Newtonsoft.Json.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\RestSharp.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\slf4net.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\slf4net.log4net.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Helpers.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Mvc.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Razor.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Razor.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Masterpass.Merchant.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Merchant.Onboarding.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Sdk.Core.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\EntityFramework.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\log4net.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Newtonsoft.Json.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\RestSharp.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\slf4net.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Helpers.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Mvc.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Razor.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Razor.xml
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.dll
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.pdb
+C:\Users\e057507\Desktop\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\WalletWebContent.csprojResolveAssemblyReference.cache
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Web.config
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Web.Debug.config
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Web.Release.config
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\log4net.config
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\MasterCard.WalletWebContent.dll.config
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\MasterCard.WalletWebContent.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\MasterCard.WalletWebContent.pdb
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Masterpass.Merchant.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Merchant.Onboarding.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Sdk.Core.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\EntityFramework.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\log4net.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Microsoft.Web.Infrastructure.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Newtonsoft.Json.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\RestSharp.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\slf4net.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\slf4net.log4net.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Helpers.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Mvc.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Razor.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Deployment.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Razor.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Masterpass.Merchant.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Merchant.Onboarding.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Com.MasterCard.Sdk.Core.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\EntityFramework.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\log4net.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\Newtonsoft.Json.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\RestSharp.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\slf4net.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Helpers.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Mvc.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.Razor.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Deployment.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\bin\System.Web.WebPages.Razor.xml
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\WalletWebContent.csprojResolveAssemblyReference.cache
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.dll
+C:\MasterCard\Merchant Support\New SDK 4-Aug-2016\To Merchant\C#_Net_NewSDK\MasterPass_CSharp_SDK_v6.0\MasterPassCSharp\obj\Debug\MasterCard.WalletWebContent.pdb

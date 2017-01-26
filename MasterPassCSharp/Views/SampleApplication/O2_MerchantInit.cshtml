@@ -1,0 +1,589 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>MasterPass Pairing Flow</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Site.css")"/>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.5.1.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/common.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/commonToolTips.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/jquery-1.3.2.min.js")"></script>
+	<script type="text/javascript" src="@ViewBag.LightboxUrl"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/jquery.qtip-1.0.0-rc3.min.js")"></script>
+</head>
+<body class="pairing">
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>
+                    MasterPass Pairing Flow
+                </h1>
+            </div>
+            <div id="logindisplay">
+                &nbsp;
+            </div>
+        </div>
+        <div id="main">
+            <h1>
+                Merchant Initialization Received
+            </h1>
+            @if (ViewBag.ErrorMessage != null)
+            {
+		
+                <h2>Error</h2>
+                <div class="error">
+                    <p>
+                        The following error occurred while trying to get the Request Token from the MasterCard API.
+                    </p>
+<pre>
+<code>
+    @ViewBag.ErrorMessage
+</code>
+</pre>
+                </div>
+            } <!-- end if ViewBag.ErrorMessage != null  -->
+            <p>
+                This step sends the Merchants URL to MasterCard services for lighbox security.
+            </p>
+            @*<fieldset>
+                <legend>Sent:</legend>
+                <table>
+                    <tr>
+                        <th>
+                            Authorization Header
+                        </th>
+                        <td>
+                           <code>@ViewBag.AuthHeader</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Signature Base String
+                        </th>
+                        <td>
+                            <hr/>
+                            <code>@ViewBag.SignatureBaseString</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Merchant Initialization XML
+                        </th>
+                        <td>
+<pre>   
+<code>
+@ViewBag.MerchantInitRequest
+</code>
+</pre>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>*@
+            @*<fieldset>
+                <legend>Sent To:</legend>
+                <table>
+                    <tr>
+                        <th>
+                            Merchant Init URL
+                        </th>
+                        <td>
+                            @ViewBag.MerchantInitUrl
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>*@
+            <fieldset>
+                <legend>Received:</legend>
+                <table>
+                    <tr>
+                        <th>
+                            Merchant Initialization Response
+                        </th>
+                        <td>
+<pre>                  
+<code>
+@ViewBag.MerchantInitResponse 
+</code>
+</pre>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            @if (ViewBag.ParamCheckout == "true") {
+            <!--c:if test="${ param.checkout == 'true'}"-->
+              <!-- REQUEST TOKEN --> 
+               
+               <h1>
+                Request Token Received
+               </h1>
+            <p>
+                Use the following Request Token to call subsequent MasterPass services.               
+            </p>
+            
+			@*<fieldset>
+            <legend>Sent</legend>
+          	<table>
+          	       <tr>
+                        <th>
+                            Authorization Header
+                            
+                        </th>
+                        <td>                      
+							<code>@ViewBag.AuthHeader</code> 
+						
+                        </td>
+                    </tr> 
+	              	<tr>
+                        <th>
+                            Signature Base String 
+                        </th>
+                        <td class="formatUrl">
+                        	<hr/>
+                            <code>@ViewBag.SignatureBaseString</code>
+                        </td>
+                    </tr>  
+           </table>
+           </fieldset>
+           
+           <fieldset>
+            <legend>Sent to:</legend>          		
+           		<table>                     
+                    <tr>
+                        <th>
+                            Request Token URL  
+                        </th>
+                        <td>
+                           @ViewBag.RequestUrl
+                        </td>
+                    </tr>
+                    
+                 </table>  
+            </fieldset>*@
+            
+            <fieldset>
+            <legend>Received</legend>  
+                   <table>                     
+                    <tr>
+                        <th>
+                            Request Token 
+                        </th>
+                        <td>
+                            @ViewBag.RequestToken <!-- ${data.requestTokenResponse.oauthToken }-->
+                        </td>
+                    </tr>
+                     <tr>
+                        <th>
+                            Authorize URL 
+                        </th>
+                        <td>
+                            @ViewBag.AuthorizationUrl <!-- ${data.requestTokenResponse.authorizationUrl }-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                           Expires in 
+                        </th>
+                        <td>
+                            @ViewBag.OAuthExpiresIn <!-- ${data.requestTokenResponse.oauthExpiresIn } --> @if (@ViewBag.OAuthExpiresIn != null) {<span>Seconds</span>}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Oauth Secret 
+                        </th>
+                        <td>
+                            @ViewBag.OAuthTokenSecret <!-- ${data.requestTokenResponse.oauthTokenSecret }-->
+                        </td>
+                    </tr>
+                 </table>
+                 </fieldset>
+               <!-- PAIRING TOKEN -->
+               <h1>
+                Pairing Token Received
+            </h1>
+          
+            <p>
+                Use the following Request Token to call subsequent MasterPass services.
+            </p>
+            
+			@*<fieldset>
+            <legend>Sent</legend>
+          	<table>
+          	       <tr>
+                        <th>
+                            Authorization Header 
+                        </th>
+                        <td>                      
+							<code>@ViewBag.AuthHeader</code>
+						
+                        </td>
+                    </tr> 
+	              	<tr>
+                        <th>
+                            Signature Base String 
+                        </th>
+                        <td>
+                        	<hr/>
+                            <code>@ViewBag.SignatureBaseString</code>
+                        </td>
+                    </tr>  
+           </table>
+           </fieldset>*@
+           
+           @*<fieldset>
+            <legend>Sent to:</legend>          		
+           		<table>                     
+                    <tr>
+                        <th>
+                            Request Token URL  
+                        </th>
+                        <td>
+                           @ViewBag.RequestUrl
+                        </td>
+                    </tr>
+                    
+                 </table>  
+            </fieldset>*@
+            
+            <fieldset>
+            <legend>Received</legend>  
+                   <table>                     
+                    <tr>
+                        <th>
+                            Pairing Token 
+                        </th>
+                        <td>
+                            @ViewBag.PairingToken
+                        </td>
+                    </tr>
+                     <tr>
+                        <th>
+                            Pairing Callback Path 
+                        </th>
+                        <td>
+                            @ViewBag.PairingCallbackPath
+                        </td>
+                    </tr>
+                 </table>
+                 </fieldset>
+               <!-- SHOPPING CART DATA -->
+               <h1>
+                Shopping Cart Data Submitted
+            </h1>
+         
+            <p>
+                This step sends the Merchants shopping cart data to MasterCard services for display in the Wallet.
+            </p>
+            
+               @*<fieldset>
+               	<legend>Sent:</legend>
+               	<table>
+                 <tr>
+                        <th>
+                            Authorization Header 
+                        </th>
+                        <td>                      
+							<code>@ViewBag.AuthHeader</code>
+                        </td>
+                    </tr> 
+	              	<tr>
+                        <th>
+                            Signature Base String 
+                        </th>
+                        <td>
+                        	<hr/>
+                             <code>@ViewBag.SignatureBaseString</code>
+                        </td>
+                    </tr>  
+                    <tr>
+                        <th>
+                            Shopping Cart XML 
+                        </th>
+                        <td>
+<pre>                        
+<code>
+@ViewBag.ShoppingCartRequest               
+</code>
+</pre>                            
+                        </td>
+                    </tr>  
+           </table>
+               </fieldset>*@
+               @*<fieldset>
+            <legend>Sent To:</legend>
+           		<table>                     
+                    <tr>
+                        <th>
+                            Shopping Cart URL 
+                        </th>
+                        <td>
+                            @ViewBag.ShoppingCartUrl
+                        </td>
+                    </tr>
+                    
+                 </table>  
+                 </fieldset>*@
+            <fieldset>
+            <legend>Received:</legend>           
+                    
+           		<table>                     
+                    <tr>
+                        <th>
+                            Shopping Cart Response 
+                        </th>
+                        <td>
+<pre>                        
+<code>                        
+@ViewBag.ShoppingCartResponse
+</code>
+</pre>                           
+                        </td>
+                    </tr>
+                     
+                 </table>
+                 </fieldset>  
+                }  <!-- End if ViewBag.ParamCheckout == "true" -->
+
+
+                <h1>
+                Configure Pairing Options
+            	</h1>
+            	<p>
+            	Select Data Types to be Paired with MasterPass
+            	</p>
+                
+	            <fieldset>
+	            	<legend>Pairing Configuration</legend>
+	            	
+	            	<form id="pairConfiguration" action="">
+		            	<table>
+		            		<tr><th>Pairing Data Types</th></tr>
+		            		<tr>
+		            			
+		            			<td><input type="checkbox" onclick="handleUpdatePairConfiguration()" id="creditCardPairing" value="creditCard"/>Credit Card</td>
+		            			<td><input type="checkbox" onclick="handleUpdatePairConfiguration()" id="profilePairing" value="profile"/>Profile</td>
+		            			<td><input type="checkbox" onclick="handleUpdatePairConfiguration()" id="addressPairing" value="address"/>Address</td>
+		            			<td><input type="checkbox" onclick="handleUpdatePairConfiguration()" id="rewardsPairing" value="rewards"/>Rewards</td>
+		            		</tr>
+		            		<tr><th>Express Option</th></tr>
+		            		<tr>
+		            			<td><input type="checkbox" onclick="handleUpdatePairConfiguration()" id="expressPairing" value="express"/>Express Pairing</td>
+		            		</tr>
+                        </table>
+                    </form>
+                <br />
+
+	            	<div id="buttonsDiv">
+	            	@if (ViewBag.Checkout == "true") {
+		            	
+		            		<div style="padding-bottom: 20px">
+								<div id="checkoutButtonDiv" onclick="handleConnectWithMasterPass()">
+									<a href="#">
+										<img src="https://www.mastercard.com/mc_us/wallet/img/en/US/mcpp_wllt_btn_chk_147x034px.png" alt="Buy with MasterPass"/>
+									</a>
+								</div>
+								
+								<p><a href="http://www.mastercard.com/mc_us/wallet/learnmore/en" target="_blank">Learn More</a></p>
+							</div>
+                    } else {
+		            		<div style="padding-bottom: 20px">
+								<div id="connectButtonDiv" onclick="handleConnectWithMasterPass()">
+									<a href="#">
+										<img src="https://www.mastercard.com/mc_us/wallet/img/en/US/mp_connect_with_button_034px.png" alt="Connect with MasterPass"/>
+									</a>
+								</div>
+								<p><a href="http://www.mastercard.com/mc_us/wallet/learnmore/en" target="_blank">Learn More</a></p>
+							</div>
+                    } <!-- end if ViewBag.Checkout == true -->
+	            	</div>
+	            	<div id="sampleCodeDiv">
+	            		<fieldset>
+	            			<legend>Javascript</legend>
+<pre>
+<code id="sampleCode">
+</code>
+</pre>
+	            		</fieldset>
+           			 </div>
+	            </fieldset>
+
+            <script type="text/javascript" language="Javascript">
+		            $(document).ready(function(){
+		            	$("#buttonsDiv").css("display","none");
+		            	setCheckout();
+		            });
+		            var checkout = false;
+	            	var config = null;
+		            var data = null;
+		            var callbackPath = "@ViewBag.PairingCallbackPath";
+		            var showRewards = "@ViewBag.RewardsProgram" == true;
+		            var locationParams = getJsonFromUrl();
+	            	var setCheckout = function(){
+	            		if (locationParams.checkout) {
+			            	console.log("checkout is true");
+			            	callbackPath = "@ViewBag.AppBaseUrl"+"@ViewBag.CallbackPath";
+			            	console.log(callbackPath);
+			            	checkout = true;
+			            }
+	            	}
+		            
+		            function getJsonFromUrl() {
+		            	  var query = location.search.substr(1);
+		            	  var result = {};
+		            	  query.split("&").forEach(function(part) {
+		            	    var item = part.split("=");
+		            	    result[item[0]] = decodeURIComponent(item[1]);
+		            	  });
+		            	  return result;
+	          		}
+	
+		            function handleConnectWithMasterPass(){
+		            	console.log("checkout: "+checkout);
+		            	console.log("data:");
+				    	console.log(data);
+				    	console.log(data.PairingDataTypes);
+				    	console.log(config.expressPairing);
+				    	console.log(callbackPath)
+		            	console.log("request token: "+data.RequestToken);
+
+		            	if (checkout){          
+		            		
+		            		if (showRewards){
+		            			MasterPass.client.checkout({
+						     		"callbackUrl":callbackPath,
+					     			"pairingRequestToken":"@ViewBag.PairingToken",
+					     			"requestToken": "@ViewBag.RequestToken",
+					     			"requestExpressCheckout":config.expressPairing,
+					     			"requestedDataTypes": data.PairingDataTypes,
+					     		 	"merchantCheckoutId":"@ViewBag.CheckoutIdentifier",
+					     		 	"allowedCardTypes":["@ViewBag.AcceptedCards"],
+					     		 	"suppressShippingAddressEnable": @ViewBag.ShippingSuppression,
+					     		 	"loyaltyEnabled" : @ViewBag.RewardsProgram,
+					       			"allowedLoyaltyPrograms":["@ViewBag.AllowedLoyaltyPrograms"],
+					     		 	"requestPairing":true,
+					     		 	"requestBasicCheckout" : @ViewBag.AuthLevelBasic,
+					     		 	"version" : "v6"
+					     		});
+		            		} else {
+		            			MasterPass.client.checkout({
+						     		"callbackUrl":callbackPath,
+					     			"pairingRequestToken":"@ViewBag.PairingToken",
+					     			"requestToken": "@ViewBag.RequestToken",
+					     			"requestExpressCheckout":config.expressPairing,
+					     			"requestedDataTypes": data.PairingDataTypes,
+					     		 	"merchantCheckoutId":@ViewBag.CheckoutIdentifier,
+					     		 	"allowedCardTypes":["@ViewBag.AcceptedCards"],
+					     		 	"suppressShippingAddressEnable": @ViewBag.ShippingSuppression,
+					     		 	"loyaltyEnabled" : @ViewBag.RewardsProgram,
+					     		 	"requestPairing":true,
+					     		 	"requestBasicCheckout" : @ViewBag.AuthLevelBasic,
+					     		 	"version" : "v6"
+					     		});
+		            		}
+		            		
+		            	} else {
+		            		MasterPass.client.connect({
+					     		"callbackUrl":callbackPath,
+				     			"pairingRequestToken":"@ViewBag.PairingToken",
+				     			"requestedDataTypes": data.PairingDataTypes,
+				     		 	"merchantCheckoutId":"@ViewBag.CheckoutIdentifier",
+				     		 	"allowedCardTypes":["@ViewBag.AcceptedCards"],
+				     		 	"suppressShippingAddressEnable": @ViewBag.ShippingSuppression,
+				     		 	"requestPairing":true,
+				     		 	"version" : "v6"
+				     		});
+		            	}
+		            	
+		            	
+		            }
+		            
+                    function handleUpdatePairConfiguration() {
+					    config = {
+					    		creditCardPairing:$('#creditCardPairing').is(':checked'),
+					    		profilePairing:$('#profilePairing').is(':checked'),
+					    		addressPairing:$('#addressPairing').is(':checked'),
+					    		rewardsPairing:$('#rewardsPairing').is(':checked')
+					    };
+					    if ($('#expressPairing').is(':checked')){
+				    		config.expressPairing = true;
+				    		if(!checkout) callbackPath = '@ViewBag.ExpressCallbackUrl';
+
+				    		if (!config.creditCardPairing || !config.addressPairing){
+				    			$('#creditCardPairing').attr('checked', true);
+				    			config.creditCardPairing = true;
+				    			$('#addressPairing').attr('checked', true);
+				    			config.addressPairing = true;
+				    		}
+				    	} else {
+				    		config.expressPairing = false;
+                            callbackPath='@ViewBag.PairingCallbackUrl';
+				    	}
+					    console.log("callback path "+callbackPath);
+					    
+					    var requestedDataTypes = [];
+					    
+					    for (var prop in config){
+					    	switch(prop){
+					    	case "creditCardPairing":
+					    		if (config[prop]) requestedDataTypes.push("CARD");
+					    		break;
+					    	case "profilePairing":
+					    		if (config[prop]) requestedDataTypes.push("PROFILE");
+					    		break;
+					    	case "addressPairing":
+					    		if (config[prop]) requestedDataTypes.push("ADDRESS");
+					    		break;
+					    	case "rewardsPairing":
+					    		if (config[prop]) requestedDataTypes.push("REWARD_PROGRAM");
+					    		break;
+					    	}
+					    }
+                        $('#sampleCode').empty();
+					    $('#sampleCodeDiv.legend').empty();
+					    $('#pairConfiguration :input').attr("disabled", true);
+
+
+					    $.post('PairingConfig', { dataTypes: requestedDataTypes.toString(), checkout: checkout }, function (dataString) {
+					        if (dataString.length > 0) data = eval('(' + dataString + ')');
+					        requestToken = data.RequestToken;
+					        pairingToken = data.PairingToken;
+
+                            console.log(data);
+
+					        console.log("config:");
+					        console.log(config);
+
+					        if (requestedDataTypes.length > 0) {
+					            $("#buttonsDiv").css("display", "block");
+					        } else {
+					            $("#buttonsDiv").css("display", "none");
+					        }
+
+					        if ((requestedDataTypes.length > 0) || (config.expressPairing && requestedDataTypes.length > 0)) {
+					            if (checkout) {
+					                if (showRewards) {
+					                    var sampleButtonString = 'MasterPass.client.checkout({\n\t"callbackUrl":' + callbackPath + ',\n\t"pairingRequestToken":"@ViewBag.PairingToken",\n\t"requestExpressCheckout":' + config.expressPairing + ',\n\t"requestedDataTypes":["' + requestedDataTypes.toString() + '"],\n\t"merchantCheckoutId":"@ViewBag.CheckoutIdentifier",\n\t"allowedCardTypes":["@ViewBag.AcceptedCards"],\n\t"suppressShippingAddressEnable": @ViewBag.ShippingSuppression,\n\t"loyaltyEnabled" : "@ViewBag.RewardsProgram",\n\t"allowedLoyaltyPrograms":["@ViewBag.AllowedLoyaltyPrograms"],\n\t"version":"v6",\n\t"requestBasicCheckout" : @ViewBag.AuthLevelBasic,\n\t"requestPairing":true \n});';
+					                } else {
+					                    var sampleButtonString = 'MasterPass.client.checkout({\n\t"callbackUrl":' + callbackPath + ',\n\t"pairingRequestToken":"@ViewBag.PairingToken",\n\t"requestExpressCheckout":' + config.expressPairing + ',\n\t"requestedDataTypes":["' + requestedDataTypes.toString() + '"],\n\t"merchantCheckoutId":"@ViewBag.CheckoutIdentifier",\n\t"allowedCardTypes":["@ViewBag.AcceptedCards"],\n\t"suppressShippingAddressEnable": @ViewBag.ShippingSuppression,\n\t"loyaltyEnabled" : "@ViewBag.RewardsProgram",\n\t"version":"v6",\n\t"requestBasicCheckout" : @ViewBag.AuthLevelBasic,\n\t"requestPairing":true \n});';
+					                }
+
+					            } else {
+					                var sampleButtonString = 'MasterPass.client.connect({\n\t"callbackUrl":' + callbackPath + ',\n\t"pairingRequestToken":"@ViewBag.PairingToken",\n\t"requestExpressCheckout":' + config.expressPairing + ',\n\t"requestedDataTypes":["' + requestedDataTypes.toString() + '"],\n\t"merchantCheckoutId":"@ViewBag.CheckoutIdentifier",\n\t"allowedCardTypes":["@ViewBag.AcceptedCards"],\n\t"suppressShippingAddressEnable": @ViewBag.ShippingSuppression,\n\t"version":"v6",\n\t"requestPairing":true \n});';
+					            }
+					        }
+					        $("#sampleCode").text(sampleButtonString);
+					        $('#pairConfiguration :input').attr("disabled", false);
+					    });
+					    
+					 }
+		            
+		             
+            </script>
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+</body>
+</html>

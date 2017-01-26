@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    	Masterpass Standard Checkout Flow
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Site.css")">
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.5.1.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/common.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/commonToolTips.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/jquery-1.3.2.min.js")"></script> <!-- Needed for tooltips only -->
+	<script type="text/javascript" src="@Url.Content("~/Scripts/tooltips/jquery.qtip-1.0.0-rc3.min.js")"></script>
+</head>
+<body class="postCheckout">
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>
+                    Masterpass Standard Checkout Flow </h1>
+            </div>
+            <div id="logindisplay">
+                &nbsp;
+            </div>
+        </div>
+        <div id="main">
+            <h1>
+                Retrieved Access Token
+            </h1>
+@if (ViewBag.ErrorMessage != null)
+{
+    <h2>Error</h2>
+    <div class="error">
+        <p>
+            The following error occurred while trying to get the Request Token from the API.
+        </p>
+<pre>
+<code>
+@ViewBag.ErrorMessage
+</code>
+</pre>
+    </div>
+}           
+            <p>
+                Use the Request Token and Verifier retrieved in the previous step to request an Access Token.
+            </p>
+            
+            <fieldset>
+            <legend>Sent</legend>
+            <table>
+            <tbody>
+                <tr>
+                        <th>
+                            Authorization Header 
+                        </th>
+                        	<td>                     
+							<code>@ViewBag.AuthHeader</code>
+                        </td>
+                </tr> 
+                <tr>
+                        <th>
+                            Signature Base String 
+                        </th>
+                        
+                        <td class="formatUrl">
+                        	<hr>
+                            <code>@ViewBag.SignatureBaseString</code>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            </fieldset>
+             <fieldset>
+            <legend>Sent to:</legend>
+            <table>
+             <tr>
+                        <th>
+                            Access Token URL 
+<!--                             <span class='tooltip' id='accessEndpoint'>[?]</span> -->
+                        </th>
+                        <td>
+                            @ViewBag.AccessUrl
+                        </td>
+                    </tr>
+            </table>
+            </fieldset>
+            
+             <fieldset>
+            <legend>Received:</legend>
+                       
+            <table>
+             <tr>
+                        <th>
+                            Access Token 
+                        </th>
+                        <td>
+                            @ViewBag.AccessToken
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Oauth Secret 
+                        </th>
+                        <td>
+                            @ViewBag.TokenSecret
+                        </td>
+                    </tr>
+            </table>
+            </fieldset>
+            <form method="post" action="O5_ProcessCheckout">
+	            <p>
+                    <input value="Retrieve Checkout Data" type="submit"/>
+	            </p>
+            </form>
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+</body>
+</html>

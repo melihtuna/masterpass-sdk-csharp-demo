@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+	<title>
+		Shopping Cart Sample Flow
+	</title>
+	<META content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+</head>
+<body class="cart">
+	<div class="page">
+		<div id="header">
+			<div id="title">
+				<h1>Shopping Cart Sample Flow</h1>
+			</div>
+			<div id="logindisplay">&nbsp;</div>
+			
+		</div>
+		<div id="main">
+			<div id="reviewOrder">
+
+				<div>
+					<fieldset>
+						<legend>Shopping Cart</legend>
+						<table>
+							<tr>
+								<td class="centerText" colspan="3">Description</td>
+								<td colspan="2">Price</td>
+								<td class="centerText" colspan="2">Quantity</td>
+								<td class="textFloatRight">Total</td>
+							</tr>
+                    @foreach (var item in @ViewBag.ShoppingCartItem)
+                    { 
+                        <tr id="items">
+                            <td>
+                                <img alt="Item_Picture" id="imageSize" src="@item.ImageURL"/>
+                            </td>
+                            <td colspan="2">@item.Description
+                            </td>
+                            <td colspan="2">@string.Format("{0:C}", (double)@item.Value / @item.Quantity / 100)
+                            </td>
+                            <td class="centerText" colspan="2">@item.Quantity<br />
+                            </td>
+                            <td class="textFloatRight">@string.Format("{0:C}", (double)@item.Value / 100)
+                            </td>
+                        </tr>
+                    }
+							<tr>
+								<td colspan="8">
+									<div id="charge-container">
+										<ul id="charges">
+                                    <li id="subtotal"><span>Subtotal: </span>
+                                        @string.Format("{0:C}", @ViewBag.SubTotal)
+                                    </li>
+                                    <li id="shipping"><span>Estimated Shipping: </span>
+                                        @string.Format("{0:C}", @ViewBag.Shipping)
+                                    </li>
+                                    <li id="tax"><span>Estimated Tax: </span>
+                                        @string.Format("{0:C}", @ViewBag.Tax)
+                                    </li>
+                                    <li id="total"><span>Total: </span>
+                                        @string.Format("{0:C}", @ViewBag.Total)
+                                    </li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</fieldset>
+					<fieldset>
+						<legend>Shipping Address</legend>
+						<table>
+							<tbody>
+								<tr>
+									<th>
+										<label for="ShippingAddress_RecipientName"> Recipient Name:</label>&nbsp;
+									</th>
+									<td>
+										@ViewBag.RecipientName
+									</td>
+								</tr>
+								<tr>
+									<th>Address:</th>
+									<td>
+										@ViewBag.ShippingAddressLine1
+										<br>
+										@ViewBag.ShippingAddressLine2
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td>
+                                        @ViewBag.ShippingAddressCity
+										<br>
+                                        @ViewBag.ShippingAddressCountry
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<label for="ShippingAddress_RecipientPhoneNumber">
+											Recipient Phone Number:</label>
+									</th>
+									<td>
+                                        @ViewBag.RecipientPhoneNumber
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</fieldset>
+					<fieldset>
+						<legend>Contact Information</legend>
+						<table>
+							<tbody>
+								<tr>
+									<th>Name:</th>
+									<td>
+										@ViewBag.Name
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<label for="Contact_Gender"> Gender:</label>
+									</th>
+									<td>
+										@if (ViewBag.GenderSpecified)
+                                        {
+										    @ViewBag.Gender
+                                        }
+									</td>
+								</tr>	
+								<tr>
+									<th>
+										<label for="Contact_DOB"> Date of Birth:</label>
+									</th>
+									<td>
+                                        @ViewBag.DOB
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<label for="Contact_NationalID"> National ID:</label>
+									</th>
+									<td>
+                                        @ViewBag.NationalId
+									</td>
+								</tr>	
+								<tr>
+									<th>
+										<label for="Contact_Country"> Country:</label>
+									</th>
+									<td>
+                                        @ViewBag.Country
+									</td>
+								</tr>																														
+								<tr>
+									<th>
+										<label for="Contact_PhoneNumber"> Phone Number:</label>
+									</th>
+									<td>
+                                        @ViewBag.PhoneNumber
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<label for="Contact_EmailAddress"> Email Address:</label>
+									</th>
+									<td>
+                                        @ViewBag.EmailAddress
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</fieldset>
+					<fieldset>
+						<legend>Card Information</legend>
+						<table>
+							<tbody>
+								<tr>
+									<th>
+										<label for="Card_CardHolderName"> Cardholder Name:</label>
+									</th>
+									<td>
+                                        @ViewBag.CardHolderName
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<label for="Card_BrandName">Brand Name:</label>
+									</th>
+									<td>
+                                        @ViewBag.CardBrandName
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<label for="Card_ExpiryDate"> Expiration Date:</label>
+									</th>
+									<td>
+                                        @ViewBag.CardExpiry
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<label for="Card_AccountNumber"> Account Number:</label>
+									</th>
+									<td>
+										@ViewBag.CardAccountNumber
+									</td>
+								</tr>
+								<tr>
+									<th>Billing Address:</th>
+									<td>
+                                        @ViewBag.CardLine1
+										<br>
+                                        @ViewBag.CardLine2
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>
+                                        @ViewBag.CardCity
+				                   		 <br>
+                                         @ViewBag.CardPostal
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</fieldset>
+					<fieldset>
+						<legend>Rewards Program</legend>
+						<table>
+							<tbody>
+								<tr>
+									<th>
+										<label for="RewardsProgram_RewardsName">Rewards Name:</label>
+									</th>
+									<td>
+                                        @ViewBag.RewardsName
+									</td>
+								<tr>
+									<th>
+										<label for="RewardsProgram_RewardsNumber">Rewards Number:</label>
+									</th>
+									<td>
+                                        @ViewBag.RewardsNumber
+									</td>
+								<tr>
+									<th>
+										<label for="RewardsProgram_ExpiryDate">Rewards Expiration Date:</label>
+									</th>
+									<td>
+                                        @ViewBag.RewardsExpiry
+									</td>
+								</tr>				
+							</tbody>
+						</table>
+					</fieldset>
+					&nbsp;&nbsp;
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<form action="C3_OrderComplete" method="POST">
+										<input type="submit" value="Place Order" />
+									</form>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</div>
+</body>
+</html>
